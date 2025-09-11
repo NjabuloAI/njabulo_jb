@@ -2,7 +2,7 @@
   "name":"Njabulo-Jb",
   "description":"Hallo🍁",
   "keywords":["bot","node","baileys","whatsapp"],
-  "logo":"https://files.catbox.moe/zotx9t.jpg",
+  "logo":"https://files.catbox.moe/mh36c7.jpg",
   "repository":"https://github.com/NjabuloJ/fana-xmd",
   "succes_url":"/",
   "stack":"container",
@@ -42,7 +42,7 @@
      "BOT_MENU_LINKS" : {
     
       "description":"add one or many link for your bot menu  ; eg : url1,url2,url3.....",
-      "value":"https://files.catbox.moe/zotx9t.jpg",
+      "value":"https://files.catbox.moe/mh36c7.jpg",
       "required":false
        
      },
