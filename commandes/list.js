@@ -59,15 +59,15 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 
     // Two sets of images to display randomly
     const extraImages1 = [
-        "https://files.catbox.moe/nj1w1s.jpg",
-        "https://files.catbox.moe/znvqsv.jpg",
-        "https://files.catbox.moe/nj1w1s.jpg"
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg"
     ];
 
     const extraImages2 = [
-        "https://files.catbox.moe/znvqsv.jpg",
-        "https://files.catbox.moe/nj1w1s.jpg",
-        "https://files.catbox.moe/znvqsv.jpg"
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/mh36c7.jpg"
     ];
 
     // Randomly select which menu to show
@@ -145,7 +145,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
                body: "ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ",
                mediaType: 1,
                thumbnailUrl: thumbnail,
-               sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
+               sourceUrl: "https://files.catbox.moe/iii5jv.jpg",
                showAdAttribution: true,
               [renderType]: true, // Apply correct thumbnail size
               },
