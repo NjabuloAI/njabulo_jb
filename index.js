@@ -899,7 +899,7 @@ zk.ev.on('group-participants.update', async (group) => {
                  title: "🍁ᥴonnᥱᥴtᥱd🍁",
                  body: "hᥲᥣᥣo mყ fᥲmιᥣყ", 
                  thumbnailUrl: "https://files.catbox.moe/lmiar9.jpg",
-                  sourceUrl: "https://files.catbox.moe/lmiar9.jpg",
+                  sourceUrl: "https://www.instagram.com/njabulojb871",
                   mediaType: 1,
                    renderLargerThumbnail: false,
                    }
