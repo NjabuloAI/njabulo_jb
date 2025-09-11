@@ -10,26 +10,26 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
     let { ms, repondre, prefixe, nomAuteurMessage, mybotpic } = commandeOptions;
     let { cm } = require(__dirname + "/../njabulo//fana");
     var coms = {};
-    var mode = s.MODE.toLowerCase() !== "yes" ? "private" : "public";
+    var mode = s.MODE.toLowerCase() !== "yes" ? "ρrιvᥲtᥱ " : "ρᥙbᥣιᥴ ";
 
     cm.map(async (com) => {
         if (!coms[com.categorie]) coms[com.categorie] = [];
         coms[com.categorie].push(com.nomCom);
     });
 
-    moment.tz.setDefault("Africa/Nairobi");
+    moment.tz.setDefault("Africa/Botswana");
     const temps = moment().format('HH:mm:ss');
     const date = moment().format('DD/MM/YYYY');
 
     // Generate greeting based on time of day
     const hour = moment().hour();
-    let greeting = "Good Morning";
+    let greeting = "Good Mornιng";
     if (hour >= 12 && hour < 18) {
-        greeting = "Good afternnon!";
+        greeting = "Good ᥲftᥱrnnon!";
     } else if (hour >= 18) {
-        greeting = "Good Everning!";
+        greeting = "Good Evᥱrnιng!";
     } else if (hour >= 22 || hour < 5) {
-        greeting = "Good Night 🌌";
+        greeting = "Good Nιght";
     }
 
     let infoMsg = `╭───────────⊷
@@ -52,7 +52,7 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
 ┊___________________________
 ┊ʀᴇᴘʟʏ ɴᴀᴍᴇ ᴄᴏᴍᴍᴀɴᴅs 1ᴛᴏ10
 ╰┬──────────⊷⳹
-┌┤🌇 ${greeting}*
+┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰─────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰───────────────⊷`;
 
