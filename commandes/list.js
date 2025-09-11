@@ -33,29 +33,28 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
     }
 
     let infoMsg = `╭───────────⊷
-┊▢ʙᴏᴛ ɴᴀᴍᴇ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-┊▢ᴘʀᴇғɪx : *[ ${s.PREFIXE} ]*
-┊▢ᴍᴏᴅᴇ : *${mode}*
-┊▢ᴅᴀᴛᴇ  : *${date}*
-╰─┬────────┬⊷
-╭─┴────────┴⊷
-┊    ❍[0]•MENULIST
-┊    ❍[1]•MENU-AI
-┊    ❍[2]•MENU-GENERAL
-┊    ❍[3]•MENU-DONLOAD
-┊    ❍[4]•MENU-USE
-┊    ❍[5]•MENU-MOD
-┊    ❍[6]•MENU-FUN
-┊    ❍[7]•MENU-BOOKS
-┊    ❍[8]•MENU-SEARCH
-┊    ❍[9]•MENU-GROUP
-┊    ❍[10]•MENU-CONTROL
-╰─┬⊷
-╭─┴⊷ʀᴇᴘʟʏ ɴᴀᴍᴇ ᴄᴏᴍᴍᴀɴᴅs 1ᴛᴏ10
-╰┬───────⊷⳹
-┌┤🌇 *Am say : ${greeting}*
-┊╰─────────────⊷
-*╰⊷••ɴנαʙυʟσ ᴊв••──────⊷* `;
+┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊▢ρrᥱfιx :  *[ ${s.PREFIXE} ]*
+┊▢modᥱ : *${mode}*
+┊▢dᥲtᥱ : *${date}*
+┊___________________________
+┊  ①◦➛ᥣιst mᥱnᥙ
+┊  ②◦➛ᥲι mᥱnᥙ
+┊  ③◦➛gᥱnᥱrᥲᥣ mᥱnᥙ
+┊  ④◦➛doᥕnᥣoᥲd mᥱnᥙ 
+┊  ⑤◦➛ᥙsᥱ mᥱnᥙ
+┊  ⑥◦➛mod mᥱnᥙ
+┊  ⑦◦➛fᥙn mᥱnᥙ
+┊  ⑧◦➛books mᥱnᥙ
+┊  ⑨◦➛sᥱᥲᥴh mᥱnᥙ
+┊  ⑩◦➛groᥙρ mᥱnᥙ
+┊  ⑪◦➛ᥴontroᥣ mᥱnᥙ
+┊___________________________
+┊ʀᴇᴘʟʏ ɴᴀᴍᴇ ᴄᴏᴍᴍᴀɴᴅs 1ᴛᴏ10
+╰┬──────────⊷⳹
+┌┤🌇 ${greeting}*
+┊╰─────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰───────────────⊷`;
 
     // Two sets of images to display randomly
     const extraImages1 = [
@@ -93,16 +92,28 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
                 gifPlayback: true,
                 contextInfo: {
                     externalAdReply: {
-                        title: "Njabulo Jb",
-                        body: "ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ",
+                        title: "njᥲbᥙᥣo jb",
+                        body: "🍁",
                         mediaType: 1,
                         thumbnailUrl: thumbnail,
-                        sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
-                        showAdAttribution: true,
+                        sourceUrl: "https://www.instagram.com/njabulojb871",
+                        showAdAttribution: false,
                         [renderType]: true, // Apply correct thumbnail size
                     },
                 },
-            }, { quoted: ms });
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
         } else {
             await zk.sendMessage(dest, {
                 image: { url: mediaUrl },
@@ -110,16 +121,28 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
                 footer: "*Njabulo_Jb*, developed by Njabulo",
                 contextInfo: {
                     externalAdReply: {
-                        title: "Njabulo Jb",
-                        body: "ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ",
+                        title: "njᥲbᥙᥣo jb",
+                        body: "🍁",
                         mediaType: 1,
                         thumbnailUrl: thumbnail,
-                        sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
-                        showAdAttribution: true,
+                        sourceUrl: "https://www.instagram.com/njabulojb871",
+                        showAdAttribution: false,
                         [renderType]: true, // Apply correct thumbnail size
                     },
                 },
-            }, { quoted: ms });
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
         }
     } catch (e) {
         console.log("🥵🥵 Error sending menu: " + e);
@@ -141,16 +164,28 @@ fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions)
             ptt: true, // Send as a voice note
              contextInfo: {
                externalAdReply: {
-               title: "song menu",
-               body: "ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ",
+               title: "njᥲbᥙᥣo jb",
+               body: "🍁",
                mediaType: 1,
                thumbnailUrl: thumbnail,
-               sourceUrl: "https://files.catbox.moe/iii5jv.jpg",
-               showAdAttribution: true,
+               sourceUrl: "https://www.instagram.com/njabulojb871",
+               showAdAttribution: false,
               [renderType]: true, // Apply correct thumbnail size
               },
             },
-        }, { quoted: ms });
+            }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     } catch (e) {
         console.log("🥵🥵 Error sending audio: " + e);
         repondre("🥵🥵 Error sending audio: " + e);
