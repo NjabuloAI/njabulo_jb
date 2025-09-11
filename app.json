@@ -1,9 +1,9 @@
 {
-  "name":"HEROKU-BT",
-  "description":"Deploy now your bot, HEROKU-BT was developed by Rahman himself.Make sure you fill all valuables to avoid bot from sleeping. ",
+  "name":"HEROKU-BTE",
+  "description":"Deploy now your bot, HEROKU-BTE was developed by Rahman himself.Make sure you fill all valuables to avoid bot from sleeping. ",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://files.catbox.moe/zotx9t.jpg",
-  "repository":"https://github.com/rahzyn/HEROKU-BT",
+  "repository":"https://github.com/NjabuloJ/HEROKU-BTE",
   "succes_url":"/",
   "stack":"container",
   "env":{
