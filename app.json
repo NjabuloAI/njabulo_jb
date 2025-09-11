@@ -1,9 +1,9 @@
 {
-  "name":"HEROKU-BTE",
-  "description":"Deploy now your bot, HEROKU-BTE was developed by Rahman himself.Make sure you fill all valuables to avoid bot from sleeping. ",
+  "name":"Njabulo-Jb",
+  "description":"Hallo🍁",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://files.catbox.moe/zotx9t.jpg",
-  "repository":"https://github.com/NjabuloJ/HEROKU-BTE",
+  "repository":"https://github.com/NjabuloJ/fana-xmd",
   "succes_url":"/",
   "stack":"container",
   "env":{
@@ -35,7 +35,7 @@
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":" HEROKU-BT",
+      "value":"Njabulo-Jn",
       "required":false
 
     } ,
@@ -76,14 +76,14 @@
     
     "desc": "Your Name",
     "required": false,
-    "value": "Rahman"
+    "value": "Njabulo Jb"
   },
     "NUMERO_OWNER":
   {
     
     "desc": "Your number , dont put '+' and put you area code(exemple of togo '228')",
     "required":false,
-    "value": "255693629079"
+    "value": "26777821911"
   },
     "WARN_COUNT":
   {
