@@ -1,8 +1,8 @@
 const {zokou} = require('../framework/zokou');
 
 zokou({
-  nomCom: 'image',
-  aliases: ['image2', 'img'],
+  nomCom: 'image1',
+  aliases: ['imagei2', 'img'],
   reaction: '💱',
   categorie: 'Image'
 }, async (dest, zk, context) => {
