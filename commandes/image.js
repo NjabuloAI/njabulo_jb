@@ -1,8 +1,9 @@
 const { zokou } = require('../framework/zokou');
+const { generateWAMessageFromContent, generateWAMessageContent } = require('@whiskeysockets/baileys');
 var gis = require('g-i-s');
 
 zokou({
-  nomCom: "image",
+  nomCom: "pic",
   categorie: "Search",
   reaction: "📷"
 }, async (dest, zk, commandeOptions) => {
@@ -29,17 +30,6 @@ zokou({
         },
         footer: {
           text: '🔹 Scroll to see more images'
-        },
-        nativeFlowMessage: {
-          buttons: [
-            {
-              name: 'cta_url',
-              buttonParamsJson: JSON.stringify({
-                display_text: '🌐 View Original',
-                url: item.url
-              })
-            }
-          ]
         }
       })));
 
@@ -63,7 +53,7 @@ zokou({
             }
           }
         }
-      }, { quoted: ms });
+      }, {});
 
       await zk.relayMessage(dest, carouselMessage.message, { messageId: carouselMessage.key.id });
     }
