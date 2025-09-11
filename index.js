@@ -845,10 +845,10 @@ zk.ev.on('group-participants.update', async (group) => {
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
             if (connection === "connecting") {
-                console.log("ℹ️ DULLAH XMD is connecting...");
+                console.log("ℹ️ Njabulo Jb is connecting...");
             }
             else if (connection === 'open') {
-                console.log("✅ DULLAH XMD- Connected to WhatsApp! ☺️");
+                console.log("✅ Njabulo Jb- Connected to WhatsApp! ☺️");
                 console.log("--");
                 await (0, baileys_1.delay)(200);
                 console.log("------");
@@ -856,7 +856,7 @@ zk.ev.on('group-participants.update', async (group) => {
                 console.log("------------------/-----");
                 console.log("DULLAH XMD is Online 🕸\n\n");
                 //chargement des commandes 
-                console.log("Loading DULLAH XMD Commands ...\n");
+                console.log("Loading Njabulo Jb Commands ...\n");
                 fs.readdirSync(__dirname + "/commandes").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
@@ -887,15 +887,27 @@ zk.ev.on('group-participants.update', async (group) => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`      DULLAH XMD
+                let cmsg =`
 ╭─────────────━┈⊷ 
-│🌎 DULLAH XMD CONNECTED
+│🌎 *Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd*
 │💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
 │⭕ ᴍᴏᴅᴇ: *${md}*
 ╰─────────────━┈⊷⁠⁠⁠⁠`;
-                await zk.sendMessage(zk.user.id, { text: cmsg });
-                }
-            }
+         await zk.sendMessage(zk.user.id, { 
+             text: cmsg,
+             contextInfo: {
+              externalAdReply: {
+                 title: "🍁ᥴonnᥱᥴtᥱd🍁",
+                 body: "hᥲᥣᥣo mყ fᥲmιᥣყ", 
+                 thumbnailUrl: "https://files.catbox.moe/lmiar9.jpg",
+                  sourceUrl: "https://files.catbox.moe/lmiar9.jpg",
+                  mediaType: 1,
+                   renderLargerThumbnail: false,
+                   }
+                 }
+                });
+               }
+             }
             else if (connection == "close") {
                 let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
                 if (raisonDeconnexion === baileys_1.DisconnectReason.badSession) {
