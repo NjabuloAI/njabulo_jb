@@ -83,7 +83,7 @@ setTimeout(() => {
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['Raheem_xmd', "safari", "1.0.0"],
+            browser: ['Njabulo-Jb', "safari", "1.0.0"],
             printQRInTerminal: true,
             fireInitQueries: false,
             shouldSyncHistoryMessage: true,
@@ -206,7 +206,7 @@ if (conf.AUTOREACT_STATUS=== "yes") {
 
             var dev = [dj, dj2,dj3,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
             function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
-            console.log("\DULLAH_XMD- ONLINE");
+            console.log("\Njabulo-Jb- ONLINE");
             console.log("=========== written message===========");
             if (verifGroupe) {
                 console.log("message provenant du groupe : " + nomGroupe);
@@ -467,9 +467,9 @@ function mybotpic() {
                                     };
                                     var txt = "lien detected, \n";
                                    // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
-                                    const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
+                                    const gifLink = "https://raw.githubusercontent.com/NjabuloJ/fana-xmd/main/media/remover.gif";
                                     var sticker = new Sticker(gifLink, {
-                                        pack: 'Zoou-Md',
+                                        pack: 'NjabuloJb',
                                         author: conf.OWNER_NAME,
                                         type: StickerTypes.FULL,
                                         categories: ['🤩', '🎉'],
@@ -565,9 +565,9 @@ function mybotpic() {
             };
             var txt = "bot detected, \n";
            // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
-            const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif";
+            const gifLink = "https://raw.githubusercontent.com/NjabuloJ/fana-xmd/main/media/remover.gif";
             var sticker = new Sticker(gifLink, {
-                pack: 'dullah-xmd',
+                pack: 'NjabuloJb',
                 author: conf.OWNER_NAME,
                 type: StickerTypes.FULL,
                 categories: ['🤩', '🎉'],
@@ -711,7 +711,7 @@ zk.ev.on('group-participants.update', async (group) => {
         const metadata = await zk.groupMetadata(group.id);
 
         if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-            let msg = `*DULLAH XMD WELCOME IN THE GROUP MESSAGE*`;
+            let msg = `*NJABULO JBWELCOME IN THE GROUP MESSAGE*`;
             let membres = group.participants;
             for (let membre of membres) {
                 msg += ` \n]|I{•------»*Hey* 🖐️ @${membre.split("@")[0]} 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙. \n\n`;
@@ -812,7 +812,7 @@ zk.ev.on('group-participants.update', async (group) => {
 
 
                 },{
-                    timezone: "Africa/Tanzania"
+                    timezone: "Africa/Botswana"
                   });
               }
 
@@ -887,8 +887,7 @@ zk.ev.on('group-participants.update', async (group) => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`
-╭─────────────━┈⊷ 
+                let cmsg =`╭─────────────━┈⊷ 
 │🌎 *Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd*
 │💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
 │⭕ ᴍᴏᴅᴇ: *${md}*
