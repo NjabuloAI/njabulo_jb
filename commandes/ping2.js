@@ -55,7 +55,7 @@ fana(
                      previewType: 0,
                      renderLargerThumbnail: true,
                      thumbnailUrl: randomNjabulourl,
-                     sourceUrl: 'https://sid-bhai.vercel.app',
+                     
                  },
              },
           }, { quoted: {
