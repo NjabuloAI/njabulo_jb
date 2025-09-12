@@ -52,9 +52,21 @@ fana(
         },
       },
     };
+    // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
 
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    
     // Reply with ping results
     await zk.sendMessage(dest, {
+      image: `${url.randomNjabulourl}`,
       text: '🚀 Njabulo Jb 🍁🍁 pong🚬* 🚀',
       contextInfo: {
         mentionedJid: [dest.sender || ""],
