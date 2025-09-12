@@ -72,16 +72,8 @@ _______________________________
       newsletterJid: '120363345407274799@newsletter',
       newsletterName: "╭••➤®Njabulo Jb",
       serverMessageId: 143,
-       },
-         forwardingScore: 999, // 
-         externalAdReply: {
-         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
-         mediaType: 1,
-          previewType: 0,
-         thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
-        },
-        },
+      }
+         }
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -118,6 +110,7 @@ _______________________________
                 }
             }
         } });
+      })  
     .catch((error) => {console.log("Error:", error)
                       repondre(error)});
 
