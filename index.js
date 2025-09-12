@@ -900,11 +900,28 @@ zk.ev.on('group-participants.update', async (group) => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`╭─────────────━┈⊷ 
-│🌎 *Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd*
-│💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
-│⭕ ᴍᴏᴅᴇ: *${md}*
-╰─────────────━┈⊷⁠⁠⁠⁠`;
+                let cmsg =`╭───────────⊷
+┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+┊▢ρrᥱfιx :  *[ ${prefixe} ]*
+┊▢modᥱ : *${md}*
+┊___________________________
+┊  ①◦➛ᥣιst mᥱnᥙ
+┊  ②◦➛ᥲι mᥱnᥙ
+┊  ③◦➛gᥱnᥱrᥲᥣ mᥱnᥙ
+┊  ④◦➛doᥕnᥣoᥲd mᥱnᥙ 
+┊  ⑤◦➛ᥙsᥱ mᥱnᥙ
+┊  ⑥◦➛mod mᥱnᥙ
+┊  ⑦◦➛fᥙn mᥱnᥙ
+┊  ⑧◦➛books mᥱnᥙ
+┊  ⑨◦➛sᥱᥲᥴh mᥱnᥙ
+┊  ⑩◦➛groᥙρ mᥱnᥙ
+┊  ⑪◦➛ᥴontroᥣ mᥱnᥙ
+┊___________________________
+┊ʀᴇᴘʟʏ *ɴᴀᴍᴇ* ᴄᴏᴍᴍᴀɴᴅs *1ᴛᴏ11*
+╰┬──────────⊷⳹
+┌┤🌎 *Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd*
+┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰──────────────────⊷⁠⁠⁠⁠`;
     await zk.sendMessage(zk.user.id, { 
     text: cmsg,
     contextInfo: {
