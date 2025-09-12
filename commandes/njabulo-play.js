@@ -38,21 +38,36 @@ fana({
     // Perform a YouTube search based on the query
     const searchResults = await ytSearch(query);
     await zk.sendMessage(dest, {
-      text: "loading audio",
+      text: `loading audio ${videoDetails.title}`,
       contextInfo: {
-       footer: "*Njabulo Jb*, developed by Njabulo",
-        gifPlayback: true,
-        externalAdReply: {
-          title: "Njabulo Jb",
-          body: "Message menu",
-          mediaType: 1,
-          thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-         sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+    isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363345407274799@newsletter',
+      newsletterName: "╭••➤®Njabulo Jb",
+      serverMessageId: 143,
+       },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: firstVideo.thumbnail,
          renderLargerThumbnail: true,
-         showAdAttribution: true,
-        }
-       }
-    }, { quoted: ms });
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
     // Check if any videos were found
     if (!searchResults || !searchResults.videos.length) {
