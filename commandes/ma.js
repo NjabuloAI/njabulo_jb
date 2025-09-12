@@ -62,12 +62,12 @@ let infoMsg =  `╭───────────⊷
 ┊  ⑩◦➛groᥙρ mᥱnᥙ
 ┊  ⑪◦➛ᥴontroᥣ mᥱnᥙ
 ┊___________________________
-┊ʀᴇᴘʟʏ ɴᴀᴍᴇ ᴄᴏᴍᴍᴀɴᴅs 1ᴛᴏ10
+┊ʀᴇᴘʟʏ *ɴᴀᴍᴇ* ᴄᴏᴍᴍᴀɴᴅs *1ᴛᴏ11*
 ╰┬──────────⊷⳹
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷`;
-    let menuMsg = `.`;
+    
     // List of image URLs
     const njabulox = [
         "https://files.catbox.moe/iii5jv.jpg",
@@ -110,7 +110,7 @@ const extraImages1 = [
         const senderName = nomAuteurMessage || message.from;  // Use correct variable for sender name
         await zk.sendMessage(dest, {
         image: { url: randomNjabulourl },
-        caption: infoMsg + menuMsg,
+        caption: infoMsg,
            contextInfo: {
             mentionedJid: [dest.sender || ""],
             externalAdReply: {
