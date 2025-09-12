@@ -14,12 +14,10 @@ const getContextInfo = (title = '', userJid = '', thumbnailUrl = '') => ({
     serverMessageId: Math.floor(100000 + Math.random() * 900000),
   },
   externalAdReply: {
-    showAdAttribution: true,
-    title: conf.BOT || 'YouTube Downloader',
-    body: title || "Media Downloader",
-    thumbnailUrl: thumbnailUrl || conf.URL || '',
-    sourceUrl: conf.GURL || '',
+    title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
     mediaType: 1,
+     previewType: 0,
+    thumbnailUrl: thumbnailUrl || conf.URL || '',
     renderLargerThumbnail: true 
   }
 });
