@@ -14,7 +14,7 @@ const getContextInfo = (title = '', userJid = '', thumbnailUrl = '') => ({
     serverMessageId: Math.floor(100000 + Math.random() * 900000),
   },
   externalAdReply: {
-    title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
+    title: "🎧YoᥙTᥙbᥱ doᥕnᥣoᥲdᥱr",
     mediaType: 1,
      previewType: 0,
     thumbnailUrl: thumbnailUrl || conf.URL || '',
@@ -70,7 +70,17 @@ fana({
     const video = await searchYouTube(query);
     
     await zk.sendMessage(dest, {
-      text: `🎵 *${video.title}*\n> ⬇️ Njabulo Jb downloading audio This may take a moment...`,
+      text: `🎧 *tιtᥣᥱ:* ${video.title}
+🎬 *Chᥲnnᥱᥣ:* 
+⏱️ *Dᥙrᥲtιon:* 
+👀 *Vιᥱᥕs:* 
+
+
+*📥ᥲᥙtomᥲtιᥴ ᥲᥙdιo & doᥴ*
+
+*1.* 🎵 Doᥕnᥣoᥲd Aᥙdιo
+*2.* 🎥 Doᥕnᥣoᥲd Vιdᥱo  
+*3.* 📢 Oᥙr Chᥲnnᥱᥣ`,
       contextInfo: getContextInfo("Downloading", userJid, video.thumbnail)
         }, { quoted: {
             key: {
