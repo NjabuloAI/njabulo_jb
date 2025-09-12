@@ -8,7 +8,7 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const Taphere = more.repeat(4001)
 
-fana({ nomCom: "ma", categorie: "General" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../njabulo//fana");
     var coms = {};
@@ -89,7 +89,7 @@ let infoMsg =  `╭───────────⊷
            contextInfo: {
             mentionedJid: [dest.sender || ""],
             externalAdReply: {
-             title: "NjabuloJb",
+             title: "njᥲbᥙᥣo jb",
              body: "🍁",
               thumbnailUrl: randomNjabulourl,
                sourceUrl: "https://www.instagram.com/njabulojb871",
@@ -97,7 +97,19 @@ let infoMsg =  `╭───────────⊷
                renderLargerThumbnail: false,
                 }
             }
-        });
+        }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     } catch (error) {
         console.error("Menu error: ", error);
         repondre("🥵🥵 Menu error: " + error);
@@ -105,6 +117,7 @@ let infoMsg =  `╭───────────⊷
 
     // List of audio URLs
     const audioUrls = [
+        "https://files.catbox.moe/6x0rb7.mp3",
         "https://files.catbox.moe/uz4apw.mp3",
         "https://files.catbox.moe/cup6rc.mp3" // New song added
     ];
@@ -120,7 +133,7 @@ let infoMsg =  `╭───────────⊷
             contextInfo: {
             mentionedJid: [dest.sender || ""],
             externalAdReply: {
-             title: "NjabuloJb",
+             title: "njᥲbᥙᥣo jb",
              body: "🍁",
               thumbnailUrl: randomNjabulourl,
                sourceUrl: "https://www.instagram.com/njabulojb871",
@@ -128,7 +141,19 @@ let infoMsg =  `╭───────────⊷
                renderLargerThumbnail: false,
                 }
             }
-        }, { quoted: ms });
+        }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     } catch (e) {
         console.log("🥵🥵 Error sending audio: " + e);
         repondre("🥵🥵 Error sending audio: " + e);
