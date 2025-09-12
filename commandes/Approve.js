@@ -58,18 +58,18 @@ fana({
   const { repondre, verifGroupe, verifAdmin, ms } = context;
 
   if (!verifGroupe) {
-    sendFormattedMessage(zk, chatId, "This command works in groups only", ms);
+    sendFormattedMessage(zk, chatId, "*Thιs ᥴommᥲnd ᥕorks ιn groᥙρs onᥣყ*", ms);
     return;
   }
 
   if (!verifAdmin) {
-    sendFormattedMessage(zk, chatId, "You are not an admin here!", ms);
+    sendFormattedMessage(zk, chatId, "*Yoᥙ ᥲrᥱ not ᥲn ᥲdmιn hᥱrᥱ!*", ms);
     return;
   }
 
   const pendingRequests = await zk.groupRequestParticipantsList(chatId);
   if (pendingRequests.length === 0) {
-    return sendFormattedMessage(zk, chatId, "There are no pending join requests.", ms);
+    return sendFormattedMessage(zk, chatId, "*Thᥱrᥱ ᥲrᥱ no ρᥱndιng joιn rᥱqᥙᥱsts*", ms);
   }
 
   for (const request of pendingRequests) {
@@ -77,5 +77,5 @@ fana({
     console.log(response);
   }
 
-  sendFormattedMessage(zk, chatId, "```All pending participants have been approved to join by Njabulo Jb```.", ms);
+  sendFormattedMessage(zk, chatId, "*Aᥣᥣ ρᥱndιng ρᥲrtιᥴιρᥲnts hᥲvᥱ bᥱᥱn ᥲρρrovᥱd to joιn bყ Njᥲbᥙᥣo Jb*", ms);
 });
