@@ -32,6 +32,12 @@
       "required":true
     }
 	,
+	 "AUDIO_REPLY": {
+      "description": "Enter yes for your bot to audio reply",
+      "value": "yes",
+      "required": false
+    }
+	,
      "PM_PERMIT" :
      {
       "description":"Other user can't use your bot in pm (type yes to active or no to deactive ; don't write in capital letter)",
