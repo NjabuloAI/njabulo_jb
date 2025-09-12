@@ -65,8 +65,8 @@ let infoMsg =  `╭───────────⊷
 ┊ʀᴇᴘʟʏ ɴᴀᴍᴇ ᴄᴏᴍᴍᴀɴᴅs 1ᴛᴏ10
 ╰┬──────────⊷⳹
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
-┊╰─────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
-╰───────────────⊷`;
+┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰──────────────────⊷`;
     let menuMsg = `.`;
     // List of image URLs
     const njabulox = [
@@ -80,7 +80,32 @@ let infoMsg =  `╭───────────⊷
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
                                                  
+const extraImages1 = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg"
+    ];
 
+    const extraImages2 = [
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/mh36c7.jpg"
+    ];
+
+    // Randomly select which menu to show
+    const isOriginalMenu = Math.random() > 0.5; // 50% chance for either menu
+
+    let mediaUrl, thumbnail, renderType;
+    if (isOriginalMenu) {
+        mediaUrl = mybotpic(); // Use bot’s original picture
+        thumbnail = extraImages1[Math.floor(Math.random() * extraImages1.length)];
+        renderType = "renderLargerThumbnail";
+    } else {
+        mediaUrl = extraImages2[Math.floor(Math.random() * extraImages2.length)];
+        thumbnail = mediaUrl; // Use the same image as media
+        renderType = "renderSmallThumbnail";
+     }
+    
    try {
         const senderName = nomAuteurMessage || message.from;  // Use correct variable for sender name
         await zk.sendMessage(dest, {
@@ -127,18 +152,18 @@ let infoMsg =  `╭───────────⊷
 
     try {
         await zk.sendMessage(dest, {
-            audio: { url: randomAudioUrl },
+          audio: { url: randomAudioUrl },
             mimetype: 'audio/mpeg',
             ptt: true, // Send as a voice note
-            contextInfo: {
-            mentionedJid: [dest.sender || ""],
-            externalAdReply: {
-             title: "njᥲbᥙᥣo jb",
-             body: "🍁",
-              thumbnailUrl: randomNjabulourl,
-               sourceUrl: "https://www.instagram.com/njabulojb871",
+             contextInfo: {
+               externalAdReply: {
+               title: "njᥲbᥙᥣo jb",
+               body: "🍁",
                mediaType: 1,
-               renderLargerThumbnail: false,
+               thumbnailUrl: thumbnail,
+               sourceUrl: "https://www.instagram.com/njabulojb871",
+               showAdAttribution: false,
+              [renderType]: true, // Apply correct thumbnail size
                 }
             }
         }, { quoted: {
