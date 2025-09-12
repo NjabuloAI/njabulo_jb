@@ -27,9 +27,7 @@ fana(
   },
   async (dest, zk, commandeOptions) => {
     const name = getName(dest, commandeOptions);
-    const img = 'https://files.catbox.moe/lmiar9.jpg';
-    const murl = 'https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z';
-
+    
     // Generate 3 ping results with random numbers
     const pingResults = Array.from({ length: 3 }, () => Math.floor(Math.random() * 10000 + 1000));
     const formattedResults = pingResults.map(ping => `👨‍💻 PONG: ${ping}  👨‍💻`).join("\n");
@@ -66,16 +64,16 @@ fana(
     
     // Reply with ping results
     await zk.sendMessage(dest, {
-      image: `${url.randomNjabulourl}`,
-      text: '🚀 Njabulo Jb 🍁🍁 pong🚬* 🚀',
-      contextInfo: {
-        mentionedJid: [dest.sender || ""],
-        externalAdReply: {
-          title: "Mr b² 🍁🍁 - Ultra-Fast Response",
-          body: `Ping Results: ${formattedResults}`,
-          thumbnailUrl: img,
-          sourceUrl: murl,
-          mediaType: 1,
+    image: { url: randomNjabulourl },
+        caption: `Ping Results: ${formattedResults}`,
+           contextInfo: {
+            mentionedJid: [dest.sender || ""],
+            externalAdReply: {
+            title: "njᥲbᥙᥣo jb",
+            body: "🍁",
+           thumbnailUrl: randomNjabulourl,
+           sourceUrl: "https://www.instagram.com/njabulojb871",
+           mediaType: 1,
           renderLargerThumbnail: false,
         },
       },
