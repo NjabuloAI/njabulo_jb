@@ -76,22 +76,17 @@ let menuMsg = `
    try {
         const senderName = nomAuteurMessage || message.from;  // Use correct variable for sender name
         await zk.sendMessage(dest, {
-            text: infoMsg + menuMsg,
-            contextInfo: {
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363345407274799@newsletter',
-            newsletterName: "NJABULO JB",
-            serverMessageId: -1,
-          },
-          forwardingScore: 999, // Score to indicate it has been forwarded
-          externalAdReply: {
-            title: "ɳᴊᴀʙᴜʟᴏ ᴊʙ",
-            body: "fast via",
-            thumbnailUrl: 'https://files.catbox.moe/1qetbh.jpg', // Add thumbnail URL if required
-            sourceUrl: 'https://whatsapp.com/channel/0029VarYP5iAInPtfQ8fRb2T', // Add source URL if necessary
-            mediaType: 1,
-            renderLargerThumbnail: true
+        image: { url: randomAudioUrl },
+        caption: infoMsg + menuMsg,
+           contextInfo: {
+            mentionedJid: [dest.sender || ""],
+            externalAdReply: {
+             title: "Mr b² 🍁🍁 - Ultra-Fast Response",
+             body: `Ping Results: ${formattedResults}`,
+              thumbnailUrl: img,
+               sourceUrl: murl,
+               mediaType: 1,
+               renderLargerThumbnail: false,
                 }
             }
         });
