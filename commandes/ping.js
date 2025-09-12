@@ -29,27 +29,9 @@ fana(
     const name = getName(dest, commandeOptions);
     
     // Generate 3 ping results with random numbers
-    const pingResults = Array.from({ length: 3 }, () => Math.floor(Math.random() * 10000 + 1000));
+    const pingResults = Array.from({ length: 1 }, () => Math.floor(Math.random() * 10000 + 1000));
     const formattedResults = pingResults.map(ping => `👨‍💻 PONG: ${ping}  👨‍💻`).join("\n");
 
-    // Constructing the contact message
-    const con = {
-      key: {
-        fromMe: false,
-        participant: `${dest.sender ? dest.sender.split('@')[0] : "unknown"}@s.whatsapp.net`,
-        ...(dest.chat ? { remoteJid: dest.chat } : {}),
-      },
-      message: {
-        contactMessage: {
-          displayName: name,
-          vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nitem1.TEL;waid=${
-            dest.sender ? dest.sender.split('@')[0] : "unknown"
-          }:${
-            dest.sender ? dest.sender.split('@')[0] : "unknown"
-          }\nitem1.X-ABLabel:Mobile\nEND:VCARD`,
-        },
-      },
-    };
     // List of image URLs
     const njabulox = [
         "https://files.catbox.moe/iii5jv.jpg",
@@ -64,8 +46,7 @@ fana(
     
     // Reply with ping results
     await zk.sendMessage(dest, {
-    image: { url: randomNjabulourl },
-        caption: `Ping Results: ${formattedResults}`,
+        text: `Ping Results: ${formattedResults}`,
            contextInfo: {
             mentionedJid: [dest.sender || ""],
             externalAdReply: {
@@ -76,9 +57,20 @@ fana(
            mediaType: 1,
           renderLargerThumbnail: false,
         },
-      },
-      quoted: con,
-    });
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
     console.log("Ping results sent successfully with verified tick!");
   }
