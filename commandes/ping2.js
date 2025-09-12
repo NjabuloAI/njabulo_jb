@@ -53,7 +53,7 @@ fana(
                      title: `Welcome`,
                      mediaType: 1,
                      previewType: 0,
-                     renderLargerThumbnail: true,
+                     renderLargerThumbnail: false,
                      thumbnailUrl: randomNjabulourl,
                      
                  },
