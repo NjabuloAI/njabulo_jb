@@ -19,7 +19,7 @@ function getName(dest, commandeOptions) {
 // Command: Ping
 fana(
   {
-    nomCom: 'ping2',
+    nomCom: 'ping',
     desc: 'To check bot response time',
     Categorie: 'General',
     reaction: '⚡',
@@ -50,7 +50,7 @@ fana(
            contextInfo: {
             mentionedJid: [dest.sender || ""],
                   externalAdReply: {
-                     title: `Welcome`,
+                     title: `💬ᥕᥱᥣᥴomᥱ fᥲmιᥣყ `,
                      mediaType: 1,
                      previewType: 0,
                      renderLargerThumbnail: false,
