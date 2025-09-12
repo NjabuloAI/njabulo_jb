@@ -24,13 +24,12 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-            mentionedJid: [dest.sender || ""],
-                  externalAdReply: {
-                     title: `ᥕᥱᥣᥴomᥱ fᥲmιᥣყ `,
-                     mediaType: 1,
-                     previewType: 0,
-                     renderLargerThumbnail: false,
-                     thumbnailUrl: randomNjabulourl,
+      externalAdReply: {
+          title: `ᥕᥱᥣᥴomᥱ fᥲmιᥣყ `,
+           mediaType: 1,
+          previewType: 0,
+              renderLargerThumbnail: false,
+              thumbnailUrl: randomNjabulourl,
                      
                  },
              },
