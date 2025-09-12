@@ -3,20 +3,44 @@ const s = require("../set");
 const fs = require('fs');
 const Heroku = require('heroku-client');
 
+    // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    
+
 async function sendFormattedMessage(zk, chatId, text, ms) {
    zk.sendMessage(chatId, {
     text,
     contextInfo: {
-      externalAdReply: {
-        title: "Njabulo Jb",
-        body: "Message via ad !",
-        thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-        sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-        mediaType: 1,
-        showAdAttribution: true
-      }
-    }
-  }, { quoted: ms });
+     externalAdReply: {
+         title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 }
 
 // Function to get a description of an environment variable
@@ -41,7 +65,7 @@ fana({
 
   // Check if the command is issued by the owner
   if (!superUser) {
-    return sendFormattedMessage(zk, chatId, "```you error 🚫 only owner```", ms);
+    return sendFormattedMessage(zk, chatId, "*onᥣყ oᥕnᥱr ᥴommᥲnd*", ms);
   }
 
   // Validate user input and respond accordingly
@@ -55,16 +79,16 @@ fana({
   switch (option) {
     case "yes":
       s.AUTO_LIKE_STATUS = 'yes';  // Enable Autodownloadstatus
-      responseMessage = 'Auto-like status has been enabled successfully.';
+      responseMessage = '*Aᥙto-ᥣιkᥱ stᥲtᥙs hᥲs bᥱᥱn ᥱnᥲbᥣᥱd sᥙᥴᥴᥱssfᥙᥣᥣყ*';
       break;
 
     case "no":
       s.AUTO_LIKE_STATUS = 'no';  // Disable public
-      responseMessage = 'Auto-like status has been disabled successfully.';
+      responseMessage = '*Aᥙto-ᥣιkᥱ stᥲtᥙs hᥲs bᥱᥱn dιsᥲbᥣᥱd sᥙᥴᥴᥱssfᥙᥣᥣყ*';
       break;
 
     default:
-      return sendFormattedMessage(zk, chatId, "Please don't invent an option. Type 'autolikestatus yes' or 'autolikestatus no'.", ms);
+      return sendFormattedMessage(zk, chatId, "*Pᥣᥱᥲsᥱ don't ιnvᥱnt ᥲn oρtιon. Tყρᥱ 'ᥲᥙtoᥣιkᥱstᥲtᥙs ყᥱs' or 'ᥲᥙtoᥣιkᥱstᥲtᥙs no*", ms);
   }
 
   // Send the response message to the user

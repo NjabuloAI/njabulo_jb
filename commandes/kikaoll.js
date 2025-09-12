@@ -5,20 +5,44 @@ const {isUserBanned , addUserToBanList , removeUserFromBanList} = require("../bd
 const  {addGroupToBanList,isGroupBanned,removeGroupFromBanList} = require("../bdd/banGroup");
 const {removeSudoNumber,addSudoNumber,issudo} = require("../bdd/sudo");
 
+    // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+ 
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    
+
 async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-      externalAdReply: {
-        title: "Njabulo Jb",
-        body: "Message via ad !",
-        thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-        sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-        mediaType: 1,
-        showAdAttribution: true
-      }
-    }
-  }, { quoted: ms });
+     externalAdReply: {
+         title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 }
 
 const sleep = (ms) => {
@@ -32,8 +56,8 @@ fana({ nomCom: "kickall", categorie: 'Group', reaction: "📣" }, async (chatId,
   const metadata = await zk.groupMetadata(chatId);
 
   if (!verifGroupe) { 
-    sendFormattedMessage(zk, chatId, "✋🏿 ✋🏿this command is reserved for groups ❌", ms);
-    return; 
+    sendFormattedMessage(zk, chatId, "*✋🏿 ✋🏿thιs ᥴommᥲnd ιs rᥱsᥱrvᥱd for groᥙρs*", ms);
+    return;
   }
 
   if (superUser || auteurMessage == metadata.owner) { 
