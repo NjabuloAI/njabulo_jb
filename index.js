@@ -150,6 +150,122 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     });
 }
 
+        const audioMap = {
+    
+"hallo": "audios/hallo.m4a",
+    "hi": "audios/hi.m4a",
+    "hey": "audios/hey.m4a",
+    "hy": "audios/hy.m4a",
+    "hello": "audios/hello.m4a",
+    "mmm": "audios/mmm.m4a",
+    "sorry": "audios/sorry.m4a",
+    "morning": "audios/morning.m4a",
+    "goodmorning": "audios/goodmorning.m4a",
+    "wake up": "audios/goodmorning.m4a",
+    "night": "audios/night.m4a",
+    "goodnight": "audios/goodnight.m4a",
+    "sleep": "audios/sleep.m4a",
+    "man": "audios/man.m4a",
+    "owoh": "audios/mkuu.m4a",
+    "baby": "audios/baby.m4a",
+    "miss": "audios/miss.m4a",
+    "bot": "audios/njabulo.m4a",
+    "Njabulo": "audios/njabulo.m4a",
+    "promise": "audios/promise.m4a",
+    "store": "audios/store.m4a",
+    "cry": "audios/cry.m4a",
+    "md": "audios/njabulo.m4a",
+    "crying": "audios/crying .m4a",
+    "beautiful": "audios/beautiful.m4a",
+    "evening": "audios/goodevening.m4a",
+    "goodevening": "audios/goodevening.m4a",
+    "darling": "audios/darling.m4a",
+    "beb": "audios/beb.m4a",
+    "love": "audios/love.m4a",
+    "afternoon": "audios/goodafternoon.m4a",
+    "school": "audios/school.m4a",
+    "lol": "audios/lol.m4a",
+    "bro": "audios/bro.m4a",
+    "goodbye": "audios/goodbye.m4a",
+    "believe": "audios/believe.m4a",
+    "welcome": "audios/welcome.m4a",
+    "bye": "audios/bye.m4a",
+    "fuck": "audios/fuck.m4a",
+    "friend": "audios/friend.m4a",
+    "gril": "audios/gril.m4a",
+    "bea": "audios/bea.m4a",
+    "boy": "audios/boy.m4a",
+    "life": "audios/life.m4a",
+    "hate": "audios/hate.m4a",
+    "sex": "audios/sex.m4a",
+    "broke": "audios/broke.m4",
+    "feeling": "audios/feeling.m4a",
+    "heart": "audios/heart.m4a",
+    "kiss": "audios/kiss.m4a",
+    "hug": "audios/kiss.m4a",
+   "technology": "audios/technology.m4a",
+   
+
+};
+
+//⚠︎ Utility to get audio file path for a message
+const getAudioForSentence = (sentence) => {
+    const words = sentence.split(/\s+/); // Split sentence into words
+    for (const word of words) {
+        const audioFile = audioMap[word.toLowerCase()]; // Check each word in sentence
+        if (audioFile) return audioFile; // Return first matched audio file
+    }
+    return null; // Return null if no match
+};
+
+// Auto-reply with audio functionality
+if (conf.AUDIO_REPLY === "yes") {
+    console.log("AUDIO_REPLY is enabled. Listening for messages...");
+
+    zk.ev.on("messages.upsert", async (m) => {
+        try {
+            const { messages } = m;
+
+            for (const message of messages) {
+                if (!message.key || !message.key.remoteJid) continue; // Ignore invalid messages
+                
+                const conversationText = message?.message?.conversation || "";
+                const audioFile = getAudioForSentence(conversationText);
+
+                if (audioFile) {
+                    try {
+                        // Check if the audio file exists
+                        await fs.access(audioFile);
+
+                        console.log(`Replying with audio: ${audioFile}`);
+                        await zk.sendMessage(message.key.remoteJid, {
+                            audio: { url: audioFile },
+                            mimetype: "audio/mp4",
+                            ptt: true
+                        });
+
+                        console.log(`Audio reply sent: ${audioFile}`);
+                    } catch (err) {
+                        console.error(`Error sending audio reply: ${err.message}`);
+                    }
+                } else {
+                    console.log("No matching keyword detected. Skipping message.");
+                }
+
+                // Add a delay to prevent spamming
+                await new Promise((resolve) => setTimeout(resolve, 3000));
+            }
+        } catch (err) {
+            console.error("Error in message processing:", err.message);
+        }
+    });
+}
+
+        // Add contact to replied set to prevent repeat replies
+        repliedContacts.add(remoteJid);
+    }
+});
+        
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];
