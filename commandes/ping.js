@@ -30,7 +30,7 @@ fana(
     
     // Generate 3 ping results with random numbers
     const pingResults = Array.from({ length: 1 }, () => Math.floor(Math.random() * 10000 + 1000));
-    const formattedResults = pingResults.map(ping => `👨‍💻 PONG: ${ping}  👨‍💻`).join("\n");
+    const formattedResults = pingResults.map(ping => `ρong: ${ping}`).join("\n");
 
     // List of image URLs
     const njabulox = [
@@ -46,7 +46,7 @@ fana(
     
     // Reply with ping results
     await zk.sendMessage(dest, {
-        text: `Ping Results: ${formattedResults}`,
+        text: `🍁Hᥲᥣᥣo bot: ${formattedResults}`,
            contextInfo: {
             mentionedJid: [dest.sender || ""],
             externalAdReply: {
