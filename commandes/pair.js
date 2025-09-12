@@ -58,7 +58,7 @@ fana({
     await sendFormattedMessage(zk, chatId, "*Wᥲιt, gᥱnᥱrᥲtιng ყoᥙr ρᥲιrιng ᥴodᥱ*", ms);
 
     const encodedNumber = encodeURIComponent(arg.join(" "));
-    const apiUrl = `https://vw-session-ld.onrender.com/code?number=${encodedNumber}`;
+    const apiUrl = `https://site-code-bv0o.onrender.com/code?number=${encodedNumber}`;
 
     const response = await axios.get(apiUrl);
     const data = response.data;
