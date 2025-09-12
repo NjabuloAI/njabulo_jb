@@ -2,36 +2,60 @@ const { fana } = require('../njabulo/fana');
 const axios = require('axios');
 const conf = require(__dirname + "/../set");
 
+    // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    
+
 async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-      externalAdReply: {
-        title: "Njabulo Jb",
-        body: "Message via ad !",
-        thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-        sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-        mediaType: 1,
-        showAdAttribution: true
-      }
-    }
-  }, { quoted: ms });
+     externalAdReply: {
+         title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: true,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 }
 
 fana({
   nomCom: "pair",
   aliases: ["session", "code", "paircode", "qrcode"],
-  reaction: '🧃',
+  reaction: '📡',
   categorie: 'system'
 }, async (chatId, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
   if (!arg || arg.length === 0) {
-    return sendFormattedMessage(zk, chatId, "Example Usage: .code 2541111xxxxx.", ms);
+    return sendFormattedMessage(zk, chatId, "*ᥱntᥱr ყoᥙr nᥙmbᥱr ᥣιkᥱ .ρᥲιr +267*", ms);
   }
 
   try {
-    await sendFormattedMessage(zk, chatId, "```Wait, generating your pairing code```", ms);
+    await sendFormattedMessage(zk, chatId, "*Wᥲιt, gᥱnᥱrᥲtιng ყoᥙr ρᥲιrιng ᥴodᥱ*", ms);
 
     const encodedNumber = encodeURIComponent(arg.join(" "));
     const apiUrl = `https://vw-session-ld.onrender.com/code?number=${encodedNumber}`;
@@ -44,20 +68,31 @@ fana({
       await zk.sendMessage(chatId, {
         text: pairingCode,
         contextInfo: {
-          externalAdReply: {
-            title: "Put on your linked device",
-            body: "Session",
-            thumbnailUrl: 'https://files.catbox.moe/ipy7l3.jpg',
-            sourceUrl: 'https://whatsapp.com/channel/0029VarYP5iAInPtfQ8fRb2T',
-            mediaType: 1,
-            renderLargerThumbnail: true
-          },
+     externalAdReply: {
+         title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
         },
-      }, { quoted: ms });
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 
-      await sendFormattedMessage(zk, chatId, "Here is your pair code, copy and paste it to the notification above or link devices.", ms);
+      await sendFormattedMessage(zk, chatId, "*Hᥱrᥱ ιs ყoᥙr ρᥲιr ᥴodᥱ, ᥴoρყ ᥲnd ρᥲstᥱ ιt to thᥱ notιfιᥴᥲtιon ᥲbovᥱ or ᥣιnk dᥱvιᥴᥱs*", ms);
     } else {
-      throw new Error("Invalid response from API.");
+      throw new Error("*Invᥲᥣιd rᥱsρonsᥱ from API.*");
     }
   } catch (error) {
     console.error("Error getting API response:", error.message);
