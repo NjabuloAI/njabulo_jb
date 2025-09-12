@@ -261,11 +261,6 @@ if (conf.AUDIO_REPLY === "yes") {
     });
 }
 
-        // Add contact to replied set to prevent repeat replies
-        repliedContacts.add(remoteJid);
-    }
-});
-        
         zk.ev.on("messages.upsert", async (m) => {
             const { messages } = m;
             const ms = messages[0];
