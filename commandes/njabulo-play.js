@@ -32,13 +32,20 @@ fana({
     return;
   }
 
+  const njabulosong =`
+╭┈┈┈⊷
+┊ 
+┊ *Quality:* High
+┊ 
+╰┈┈┈┈┈┈┈┈┈┈┈┈┈⊷`,
+
   const query = arg.join(" ");
 
   try {
     // Perform a YouTube search based on the query
     const searchResults = await ytSearch(query);
     await zk.sendMessage(dest, {
-      text: `loading audio ${videoDetails.title}`,
+      text: njabulosong,
       contextInfo: {
     isForwarded: true,
       forwardedNewsletterMessageInfo: {
