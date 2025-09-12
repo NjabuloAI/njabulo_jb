@@ -43,14 +43,14 @@ fana({ nomCom: 'uptime',
     try {
         await zk.sendMessage(dest, { 
         text:  `*🚀 SYSTEM UPTIME* 🔋\n\n🕒 System Time: ${temps}\n*□□□□□□□□□□□□□□□□□□□□□□□□□□*\nDuration: ${runtime(process.uptime())}\n📅 Activated: ${date}\n\n⚡ Performance:\nReliability: 99.98%\n Stability: 96%\n Nodes:\nGlobal Distribution\n\n🔋 Maintenance:\nAuto-Scheduled\n*□□□□□□□□□□□□□□□□□□□□□□□□□□*\n*🌐 Njabulo JB online date* \n Uptime days: ${greeting}\n`,
-         contextInfo: {
-            externalAdReply: {
-             title: "Njabulo Jb",
-             body: "Message via ad !",
-             thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-             sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-               mediaType: 1,
-               showAdAttribution: true
+                contextInfo: {
+                  externalAdReply: {
+                     title: `Welcome`,
+                     mediaType: 1,
+                     previewType: 0,
+                     renderLargerThumbnail: true,
+                     thumbnailUrl: 'https://files.catbox.moe/n91s69.jpeg',,
+                     sourceUrl: 'https://sid-bhai.vercel.app'
                 }
             }
         }, { quoted: ms });
