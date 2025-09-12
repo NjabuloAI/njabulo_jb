@@ -25,6 +25,13 @@
       "required":false
     }
     ,
+	  "AUTO_REACT_STATUS":
+    {
+      "description":"Enter yes for your bot to auto like status",
+      "value":"yes",
+      "required":true
+    }
+	,
      "PM_PERMIT" :
      {
       "description":"Other user can't use your bot in pm (type yes to active or no to deactive ; don't write in capital letter)",
