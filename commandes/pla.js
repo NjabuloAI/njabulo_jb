@@ -68,7 +68,7 @@ async function downloadFromApis(apis) {
 
 // Audio download command
 fana({
-  nomCom: "play",
+  nomCom: "pla",
   aliases: ["song", "playdoc", "audio", "mp3"],
   categorie: "download",
   reaction: "🎸"
@@ -125,7 +125,7 @@ fana({
 });
 
 fana({
-  nomCom: "video",
+  nomCom: "vide",
   aliases: ["videodoc", "film", "mp4"],
   categorie: "download",
   reaction: "🎬"
