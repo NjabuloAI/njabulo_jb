@@ -840,6 +840,19 @@ zk.ev.on('group-participants.update', async (group) => {
             };
             insertContact(contacts);
         });
+
+            // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    
         //fin événement contact 
         //événement connexion
         zk.ev.on("connection.update", async (con) => {
@@ -892,19 +905,37 @@ zk.ev.on('group-participants.update', async (group) => {
 │💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
 │⭕ ᴍᴏᴅᴇ: *${md}*
 ╰─────────────━┈⊷⁠⁠⁠⁠`;
-         await zk.sendMessage(zk.user.id, { 
-             text: cmsg,
-             contextInfo: {
-              externalAdReply: {
-                 title: "🍁ᥴonnᥱᥴtᥱd🍁",
-                 body: "hᥲᥣᥣo mყ fᥲmιᥣყ", 
-                 thumbnailUrl: "https://files.catbox.moe/lmiar9.jpg",
-                  sourceUrl: "https://www.instagram.com/njabulojb871",
-                  mediaType: 1,
-                   renderLargerThumbnail: false,
-                   }
-                 }
-                });
+    await zk.sendMessage(zk.user.id, { 
+    text: cmsg,
+    contextInfo: {
+    isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363345407274799@newsletter',
+      newsletterName: "╭••➤®Njabulo Jb",
+      serverMessageId: 143,
+       },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: true,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
                }
              }
             else if (connection == "close") {
