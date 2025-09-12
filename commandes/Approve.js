@@ -26,7 +26,6 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-    mentionedJid: [dest.sender || ""],
     isForwarded: true,
       forwardedNewsletterMessageInfo: {
       newsletterJid: '120363345407274799@newsletter',
@@ -36,9 +35,9 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
          forwardingScore: 999, // 
          externalAdReply: {
          title: "njᥲbᥙᥣo jb",
-         thumbnailUrl: randomNjabulourl,
-         sourceUrl: "https://www.instagram.com/njabulojb871",
          mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
          renderLargerThumbnail: false,
         },
         },
