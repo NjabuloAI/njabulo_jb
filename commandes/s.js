@@ -20,7 +20,7 @@ const getContextInfo = (title = '', userJid = '', thumbnailUrl = '') => ({
     thumbnailUrl: thumbnailUrl || conf.URL || '',
     sourceUrl: conf.GURL || '',
     mediaType: 1,
-    renderLargerThumbnail: false
+    renderLargerThumbnail: true 
   }
 });
 
@@ -72,8 +72,7 @@ fana({
     const video = await searchYouTube(query);
     
     await zk.sendMessage(dest, {
-      image: { url: video.thumbnail},
-      caption: `🎵 *${video.title}*\n> ⬇️ Njabulo Jb downloading audio This may take a moment...`,
+      text: `🎵 *${video.title}*\n> ⬇️ Njabulo Jb downloading audio This may take a moment...`,
       contextInfo: getContextInfo("Downloading", userJid, video.thumbnail)
         }, { quoted: {
             key: {
