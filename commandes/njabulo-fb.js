@@ -4,7 +4,7 @@ const getFBInfo = require("@xaviabot/fb-downloader");
 const { default: axios } = require('axios');
 
 fana({
-  nomCom: "fb2",
+  nomCom: "fb",
   categorie: "Download",
   reaction: "🎞️"
 },
@@ -58,23 +58,31 @@ async (dest, zk, commandeOptions) => {
      getFBInfo(queryURL)
     .then((result) => {
        let caption = `
-        titre: ${result.title}
-        Lien: ${result.url}
+_______________________________
+*titre:* ${result.title}
+*Lien:* ${result.url}
+_______________________________
       `;
        zk.sendMessage(dest,{
          image : { url : result.thumbnail}, 
          caption : caption,
-            contextInfo: {
-        externalAdReply: {
-          title: "Njabulo Jb",
-          body: "Message via ad !",
-          thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-          sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-          mediaType: 1,
-          showAdAttribution: true
-              },
-            },
-              }, { quoted: {
+         contextInfo: {
+    isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363345407274799@newsletter',
+      newsletterName: "╭••➤®Njabulo Jb",
+      serverMessageId: 143,
+       },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
             key: {
                 fromMe: false,
                 participant: `0@s.whatsapp.net`,
@@ -82,7 +90,7 @@ async (dest, zk, commandeOptions) => {
             },
             message: {
                 contactMessage: {
-                    displayName: "NנɐႦυℓσ נႦ✆︎",
+                    displayName: "njᥲbᥙᥣo",
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
@@ -90,16 +98,14 @@ async (dest, zk, commandeOptions) => {
        zk.sendMessage(dest, { 
          video: { url: result.sd  }, 
          contextInfo: {
-        externalAdReply: {
-          title: "Njabulo Jb",
-          body: "Message via ad !",
-          thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-          sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-          mediaType: 1,
-          showAdAttribution: true
-           },
-         },
-           }, { quoted: {
+    isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363345407274799@newsletter',
+      newsletterName: "╭••➤®Njabulo Jb",
+      serverMessageId: 143,
+      }
+         }
+          }, { quoted: {
             key: {
                 fromMe: false,
                 participant: `0@s.whatsapp.net`,
@@ -107,13 +113,11 @@ async (dest, zk, commandeOptions) => {
             },
             message: {
                 contactMessage: {
-                    displayName: "NנɐႦυℓσ נႦ✆︎",
+                    displayName: "njᥲbᥙᥣo",
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
         } });
-      
-    })
     .catch((error) => {console.log("Error:", error)
                       repondre(error)});
 
