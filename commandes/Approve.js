@@ -26,14 +26,20 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-            mentionedJid: [dest.sender || ""],
-            externalAdReply: {
-            title: "njᥲbᥙᥣo jb",
-            body: "🍁",
-           thumbnailUrl: randomNjabulourl,
-           sourceUrl: "https://www.instagram.com/njabulojb871",
-           mediaType: 1,
-          renderLargerThumbnail: false,
+    mentionedJid: [dest.sender || ""],
+    isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363345407274799@newsletter',
+      newsletterName: "╭••➤®Njabulo Jb",
+      serverMessageId: 143,
+       },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "njᥲbᥙᥣo jb",
+         thumbnailUrl: randomNjabulourl,
+         sourceUrl: "https://www.instagram.com/njabulojb871",
+         mediaType: 1,
+         renderLargerThumbnail: false,
         },
         },
           }, { quoted: {
