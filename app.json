@@ -25,7 +25,7 @@
       "required":false
     }
     ,
-	  "AUTO_REACT_STATUS":
+	  "AUTOREACT_STATUS":
     {
       "description":"Enter yes for your bot to auto like status",
       "value":"yes",
