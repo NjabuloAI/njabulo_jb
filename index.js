@@ -152,10 +152,10 @@ if (conf.AUTOREACT_STATUS=== "yes") {
         
         const audioMap = {
     
-    "hallo": "audios/hallo.m4a",
-    "hi": "audios/hi.m4a",
-    "hey": "audios/hey.m4a",
-    "hy": "audios/hy.m4a",
+    "hallo": "audios/hello.m4a",
+    "hi": "audios/hello.m4a",
+    "hey": "audios/hello.m4a",
+    "hy": "audios/hello.m4a",
     "hello": "audios/hello.m4a",
     "mmm": "audios/mmm.m4a",
     "sorry": "audios/sorry.m4a",
@@ -164,7 +164,7 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     "wake up": "audios/goodmorning.m4a",
     "night": "audios/goodnight.m4a",
     "goodnight": "audios/goodnight.m4a",
-    "sleep": "audios/sleep.m4a",
+    "sleep": "audios/goodnight.m4a",
     "man": "audios/man.m4a",
     "owoh": "audios/mkuu.m4a",
     "baby": "audios/baby.m4a",
@@ -184,7 +184,9 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     "love": "audios/love.m4a",
     "afternoon": "audios/goodafternoon.m4a",
     "school": "audios/school.m4a",
-    "lol": "audios/lol.m4a",
+    "kkk": "audios/kkk.m4a
+    "kkkk": "audios/kkk.m4a
+    "lol": "audios/kkk.m4a",
     "bro": "audios/bro.m4a",
     "goodbye": "audios/goodbye.m4a",
     "believe": "audios/believe.m4a",
@@ -193,13 +195,13 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     "fuck": "audios/fuck.m4a",
     "friend": "audios/friend.m4a",
     "gril": "audios/gril.m4a",
-    "bea": "audios/bea.m4a",
+    "bea": "audios/baby.m4a",
     "boy": "audios/boy.m4a",
     "life": "audios/life.m4a",
-    "hate": "audios/hate.m4a",
+    "hate": "audios/sorry.m4a",
     "sex": "audios/sex.m4a",
     "broke": "audios/broke.m4",
-    "feeling": "audios/feeling.m4a",
+    "feeling": "audios/baby.m4a",
     "heart": "audios/heart.m4a",
     "kiss": "audios/kiss.m4a",
     "hug": "audios/hug.m4a",
@@ -957,7 +959,7 @@ function getCurrentDateTime() {
 setInterval(async () => {
     if (conf.AUTO_BIO === "yes") {
         const currentDateTime = getCurrentDateTime(); // Get the current date and time
-        const bioText = `ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴄᴏɴɴᴇᴄᴛᴇᴅ 📅 ᴅᴀᴛᴇ/ᴛɪᴍᴇ\n${currentDateTime}`; // Format the bio text
+        const bioText = `hallo\n${currentDateTime}`; // Format the bio text
         await zk.updateProfileStatus(bioText); // Update the bio
         console.log(`Updated Bio: ${bioText}`); // Log the updated bio
     }
