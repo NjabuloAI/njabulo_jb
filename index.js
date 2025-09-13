@@ -221,7 +221,6 @@ zk.ev.on("messages.upsert", async (m) => {
                 }
             }
         } });
-        });
 
         const audioMap = {
     
