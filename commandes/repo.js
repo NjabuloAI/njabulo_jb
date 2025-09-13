@@ -11,8 +11,7 @@ fana({
 }, async (dest, zk, commandeOptions) => {
     const { pushname, repondre } = commandeOptions;
     const githubRepo = 'https://api.github.com/repos/NjabuloJ/Njabulo-Jb';
-    const img = 'https://files.catbox.moe/jcylyv.jpg';
-
+    
     try {
         const response = await axios.get(githubRepo);
         const data = response.data;
@@ -20,6 +19,18 @@ fana({
         const created = moment(data.created_at).format("DD/MM/YYYY");
         const updated = moment(data.updated_at).format("DD/MM/YYYY");
 
+            // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    
         const gitdata = `
 
 ╭───────────━⊷
@@ -38,18 +49,30 @@ THANKS FOR SUPPORTING NJABULO JB!`;
 
 
 await zk.sendMessage(dest, { 
-            image: { url: img },
-            caption: gitdata,
-            contextInfo: {
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: "120363288304618280@newsletter",
-                    newsletterName: "_many_",
-                    serverMessageId: -1
+    image: { url: randomNjabulourl },
+     caption: gitdata,
+      contextInfo: {
+        externalAdReply: {
+         title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
-
-        });
+        } });
 
     } catch (e) {
         console.log("Error fetching data:", error);
