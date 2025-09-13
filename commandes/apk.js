@@ -22,7 +22,7 @@ fana({
 
   try {
     // Fetch app search results from the BK9 API
-    const searchResponse = await axios.get(`https://bk9.fun/search/apk?q=${appName}`);
+    const searchResponse = await axios.get(`https://api.apkdownloaders.com/search?q=${appName}`);
     const searchData = searchResponse.data;
 
     // Check if any results were found
