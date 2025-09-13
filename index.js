@@ -152,17 +152,17 @@ if (conf.AUTOREACT_STATUS=== "yes") {
         
         const audioMap = {
     
-"hallo": "audios/hallo.m4a",
+    "hallo": "audios/hallo.m4a",
     "hi": "audios/hi.m4a",
     "hey": "audios/hey.m4a",
     "hy": "audios/hy.m4a",
     "hello": "audios/hello.m4a",
     "mmm": "audios/mmm.m4a",
     "sorry": "audios/sorry.m4a",
-    "morning": "audios/morning.m4a",
+    "morning": "audios/goodmorning.m4a",
     "goodmorning": "audios/goodmorning.m4a",
     "wake up": "audios/goodmorning.m4a",
-    "night": "audios/night.m4a",
+    "night": "audios/goodnight.m4a",
     "goodnight": "audios/goodnight.m4a",
     "sleep": "audios/sleep.m4a",
     "man": "audios/man.m4a",
@@ -202,8 +202,9 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     "feeling": "audios/feeling.m4a",
     "heart": "audios/heart.m4a",
     "kiss": "audios/kiss.m4a",
-    "hug": "audios/kiss.m4a",
-   "technology": "audios/technology.m4a",
+    "hug": "audios/hug.m4a",
+    "https": "audio/https.m4a",
+    "technology": "audio/technology.m4a",
    
 
 };
@@ -956,7 +957,7 @@ function getCurrentDateTime() {
 setInterval(async () => {
     if (conf.AUTO_BIO === "yes") {
         const currentDateTime = getCurrentDateTime(); // Get the current date and time
-        const bioText = `ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴄᴏɴɴᴇᴄᴛᴇᴅ 📡\n📅 ᴅᴀᴛᴇ/ᴛɪᴍᴇ${currentDateTime}ᴛᴏ ᴅᴇᴠɪᴄᴇ💻`; // Format the bio text
+        const bioText = `ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴄᴏɴɴᴇᴄᴛᴇᴅ 📡\n📅 ᴅᴀᴛᴇ/ᴛɪᴍᴇ\n${currentDateTime}\nᴛᴏ ᴅᴇᴠɪᴄᴇ💻`; // Format the bio text
         await zk.updateProfileStatus(bioText); // Update the bio
         console.log(`Updated Bio: ${bioText}`); // Log the updated bio
     }
