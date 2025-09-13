@@ -180,7 +180,7 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     "evening": "audios/goodevening.m4a",
     "goodevening": "audios/goodevening.m4a",
     "darling": "audios/darling.m4a",
-    "beb": "audios/beb.m4a",
+    "baby": "audios/baby.m4a",
     "love": "audios/love.m4a",
     "afternoon": "audios/goodafternoon.m4a",
     "school": "audios/school.m4a",
