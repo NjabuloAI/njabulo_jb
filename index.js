@@ -111,6 +111,19 @@ setTimeout(() => {
         };
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
+
+     // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+        
         // Replace the status reaction code with this:
 
 if (conf.AUTOREACT_STATUS=== "yes") {
@@ -833,7 +846,38 @@ zk.ev.on('group-participants.update', async (group) => {
 
             msg += `❒ *𝑅𝐸𝐴𝐷 𝑇𝐻𝐸 𝐺𝑅𝑂𝑈𝑃 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝑇𝐼𝑂𝑁 𝑇𝑂 𝐴𝑉𝑂𝐼𝐷 𝐺𝐸𝑇𝑇𝐼𝑁𝐺 𝑅𝐸𝑀𝑂𝑉𝐸𝐷 𝒚𝒐𝒖 😂* `;
 
-            zk.sendMessage(group.id, { image: { url: ppgroup }, caption: msg, mentions: membres });
+         zk.sendMessage(group.id, { 
+         image: { url: ppgroup },
+         caption: msg,
+         contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: true,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
         } else if (group.action == 'remove' && (await recupevents(group.id, "goodbye") == 'on')) {
             let msg = `one or somes member(s) left group;\n`;
 
@@ -844,13 +888,12 @@ zk.ev.on('group-participants.update', async (group) => {
 
         zk.sendMessage(group.id, { 
         text: msg, 
-        mentions: membres, 
         contextInfo: {
        isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363345407274799@newsletter',
-      newsletterName: "╭••➤®Njabulo Jb",
-      serverMessageId: 143,
+       forwardedNewsletterMessageInfo: {
+       newsletterJid: '120363345407274799@newsletter',
+       newsletterName: "╭••➤®Njabulo Jb",
+       serverMessageId: 143,
        },
          forwardingScore: 999, // 
          externalAdReply: {
@@ -1012,17 +1055,6 @@ setInterval(async () => {
             insertContact(contacts);
         });
 
-            // List of image URLs
-    const njabulox = [
-        "https://files.catbox.moe/iii5jv.jpg",
-        "https://files.catbox.moe/xjeyjh.jpg",
-        "https://files.catbox.moe/mh36c7.jpg",
-        "https://files.catbox.moe/u6v5ir.jpg",
-        "https://files.catbox.moe/bnb3vx.jpg" // New image added
-    ];
-
-    // Select a random image file
-    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
     
         //fin événement contact 
         //événement connexion
