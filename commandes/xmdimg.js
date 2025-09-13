@@ -1,9 +1,9 @@
-const { zokou } = require('../framework/zokou');
+const { fana } = require('../njabulo/fana');
 const gis = require('g-i-s');
 const axios = require('axios');
 const conf = require(__dirname + '/../set');
 
-zokou({
+fana({
   nomCom: "img",
   aliases: ["image", "images"],
   categorie: "Images",
@@ -54,7 +54,7 @@ zokou({
   }
 });
 
-zokou({
+fana({
   nomCom: 'messi',
   categorie: 'images',
   reaction: '💗'
@@ -96,7 +96,7 @@ zokou({
     sendMessage("Error occurred while retrieving data: " + error.message);
   }
 });
-zokou({
+fana({
   nomCom: "waifu",
   categorie: "images",
   reaction: "💗"
@@ -133,7 +133,7 @@ zokou({
     repondre('Error retrieving data: ' + error.message);
   }
 });
-zokou({
+fana({
   nomCom: "trap",
   categorie: "images",
   reaction: "💗"
@@ -170,7 +170,7 @@ zokou({
     repondre('Error retrieving data: ' + error.message);
   }
 });
-zokou({
+fana({
   nomCom: "neko",
   categorie: "images",
   reaction: "☘️"
@@ -207,7 +207,7 @@ zokou({
     repondre('Error retrieving data: ' + error.message);
   }
 });
-zokou({
+fana({
   nomCom: "blowjob",
   categorie: "images",
   reaction: "💗"
