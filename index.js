@@ -939,7 +939,7 @@ zk.ev.on('group-participants.update', async (group) => {
 //⚠︎ time zone Botswana 
 function getCurrentDateTime() {
     const options = {
-        timeZone: 'Africa/Nairobi', // Botswana time zone
+        timeZone: 'Africa/Botswana', // Botswana time zone
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',
@@ -956,7 +956,7 @@ function getCurrentDateTime() {
 setInterval(async () => {
     if (conf.AUTO_BIO === "yes") {
         const currentDateTime = getCurrentDateTime(); // Get the current date and time
-        const bioText = `NנɐႦυℓσ נႦ is Active📡\n${currentDateTime}`; // Format the bio text
+        const bioText = `ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴄᴏɴɴᴇᴄᴛᴇᴅ 📡\n📅 ᴅᴀᴛᴇ/ᴛɪᴍᴇ${currentDateTime}ᴛᴏ ᴅᴇᴠɪᴄᴇ💻`; // Format the bio text
         await zk.updateProfileStatus(bioText); // Update the bio
         console.log(`Updated Bio: ${bioText}`); // Log the updated bio
     }
