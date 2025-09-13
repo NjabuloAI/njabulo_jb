@@ -184,8 +184,8 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     "love": "audios/love.m4a",
     "afternoon": "audios/goodafternoon.m4a",
     "school": "audios/school.m4a",
-    "kkk": "audios/kkk.m4a
-    "kkkk": "audios/kkk.m4a
+    "kkk": "audios/kkk.m4a",
+    "kkkk": "audios/kkk.m4a",
     "lol": "audios/kkk.m4a",
     "bro": "audios/bro.m4a",
     "goodbye": "audios/goodbye.m4a",
@@ -942,7 +942,7 @@ zk.ev.on('group-participants.update', async (group) => {
 //⚠︎ time zone Botswana 
 function getCurrentDateTime() {
     const options = {
-        timeZone: 'Africa/Botswana', // Botswana time zone
+        timeZone: 'Africa/Nairobi', // Botswana time zone
         year: 'numeric',
         month: '2-digit',
         day: '2-digit',
@@ -959,7 +959,7 @@ function getCurrentDateTime() {
 setInterval(async () => {
     if (conf.AUTO_BIO === "yes") {
         const currentDateTime = getCurrentDateTime(); // Get the current date and time
-        const bioText = `hallo\n${currentDateTime}`; // Format the bio text
+        const bioText = `NנɐႦυℓσ נႦ is Active📡\n${currentDateTime}`;  // Format the bio text
         await zk.updateProfileStatus(bioText); // Update the bio
         console.log(`Updated Bio: ${bioText}`); // Log the updated bio
     }
