@@ -150,6 +150,9 @@ if (conf.AUTOREACT_STATUS=== "yes") {
     });
 }
 
+
+        
+
         const audioMap = {
     
 "hallo": "audios/hallo.m4a",
@@ -935,7 +938,33 @@ zk.ev.on('group-participants.update', async (group) => {
           return
         }
 
+       
+//⚠︎ time zone Botswana 
+function getCurrentDateTime() {
+    const options = {
+        timeZone: 'Africa/Nairobi', // Botswana time zone
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false, // 24-hour format
+    };
+    const dateTime = new Intl.DateTimeFormat('en-KE', options).format(new Date());
+    return dateTime;
+}
 
+//⚠︎Auto Bio Update Interval
+setInterval(async () => {
+    if (conf.AUTO_BIO === "yes") {
+        const currentDateTime = getCurrentDateTime(); // Get the current date and time
+        const bioText = `NנɐႦυℓσ נႦ is Active📡\n${currentDateTime}`; // Format the bio text
+        await zk.updateProfileStatus(bioText); // Update the bio
+        console.log(`Updated Bio: ${bioText}`); // Log the updated bio
+    }
+}, 60000); // Update bio every 60 seconds
+        
         //événement contact
         zk.ev.on("contacts.upsert", async (contacts) => {
             const insertContact = (newContact) => {
