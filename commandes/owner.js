@@ -46,7 +46,6 @@ fana({ nomCom: "owner", categorie: "General", reaction: "❣️" }, async (dest,
         contacts: {
             displayName: conf.OWNER_NAME,
             contacts: [{ vcard }],
-        },
         }, { quoted: {
             key: {
                 fromMe: false,
