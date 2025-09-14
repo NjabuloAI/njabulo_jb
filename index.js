@@ -838,7 +838,7 @@ zk.ev.on('group-participants.update', async (group) => {
         const metadata = await zk.groupMetadata(group.id);
 
         if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-            let msg = `*mᥱssᥲgᥱ bot ᥕᥱᥣᥴomᥱ on groᥙρ *`;
+            let msg = `*mᥱssᥲgᥱ bot ᥕᥱᥣᥴomᥱ on groᥙρ*`;
             let membres = group.participants;
             for (let membre of membres) {
                 msg += ` \n•------» *Hᥱყ* 🖐️ @${membre.split("@")[0]} 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙. \n\n`;
