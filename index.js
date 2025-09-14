@@ -838,13 +838,13 @@ zk.ev.on('group-participants.update', async (group) => {
         const metadata = await zk.groupMetadata(group.id);
 
         if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-            let msg = `*NJABULO JBWELCOME IN THE GROUP MESSAGE*`;
+            let msg = `*mᥱssᥲgᥱ bot ᥕᥱᥣᥴomᥱ on groᥙρ *`;
             let membres = group.participants;
             for (let membre of membres) {
-                msg += ` \n]|I{•------»*Hey* 🖐️ @${membre.split("@")[0]} 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙. \n\n`;
+                msg += ` \n•------» *Hᥱყ* 🖐️ @${membre.split("@")[0]} 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙. \n\n`;
             }
-
-            msg += `❒ *𝑅𝐸𝐴𝐷 𝑇𝐻𝐸 𝐺𝑅𝑂𝑈𝑃 𝐷𝐸𝑆𝐶𝑅𝐼𝑃𝑇𝐼𝑂𝑁 𝑇𝑂 𝐴𝑉𝑂𝐼𝐷 𝐺𝐸𝑇𝑇𝐼𝑁𝐺 𝑅𝐸𝑀𝑂𝑉𝐸𝐷 𝒚𝒐𝒖 😂* `;
+            
+            msg += `*Rᥱᥲd Thᥱ groᥙρ dᥱsᥴrιρtιons to ᥲvoιd gᥱttιng rᥱmovᥱ ყoᥙr😂* `;
 
          zk.sendMessage(group.id, { 
          image: { url: ppgroup },
@@ -858,7 +858,7 @@ zk.ev.on('group-participants.update', async (group) => {
          },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
+         title: "ᥕᥱᥣᥴomᥱ mᥱssᥲgᥱ groᥙρ ",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
@@ -897,11 +897,11 @@ zk.ev.on('group-participants.update', async (group) => {
        },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
+         title: "ᥕᥱᥣᥴomᥱ mᥱssᥲgᥱ groᥙρ",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: true,
+         renderLargerThumbnail: false,
         },
         },
           }, { quoted: {
