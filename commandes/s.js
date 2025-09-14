@@ -70,9 +70,8 @@ fana({
     const video = await searchYouTube(query);
     
     await zk.sendMessage(dest, {
-image: { url: video.thumbnail}, 
-caption `🎧 *tιtᥣᥱ:* ${video.title}
-⏱️ *Duration:* ${video.temp}
+image: { url: video.thumbnail},
+caption: `🎧 *tιtᥣᥱ:* ${video.title}
 👀 *Views:* 3921809
 
 
@@ -84,6 +83,7 @@ caption `🎧 *tιtᥣᥱ:* ${video.title}
 
 _Reply with any number above to proceed_
 _This menu stays active - you can use it multiple times_ `,
+                         
       contextInfo: getContextInfo("Downloading", userJid, video.thumbnail)
         }, { quoted: {
             key: {
