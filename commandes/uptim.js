@@ -42,9 +42,10 @@ fana({ nomCom: 'uptime',
       
     try {
         await zk.sendMessage(dest, { 
+        text: `uptime bot run ${runtime(process.uptime())}`,
         contextInfo: {
        externalAdReply: {
-         title: `⏰ᥕᥱᥣᥴomᥱ fᥲmιᥣყ uptime  ${runtime(process.uptime())}`,
+         title: "⏰ᥕᥱᥣᥴomᥱ fᥲmιᥣყ",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
