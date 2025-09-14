@@ -46,19 +46,8 @@ fana({ nomCom: "owner", categorie: "General", reaction: "❣️" }, async (dest,
         contacts: {
             displayName: conf.OWNER_NAME,
             contacts: [{ vcard }],
-        }, { quoted: {
-            key: {
-                fromMe: false,
-                participant: `0@s.whatsapp.net`,
-                remoteJid: "status@broadcast"
-            },
-            message: {
-                contactMessage: {
-                    displayName: "NנɐႦυℓσ נႦ✆︎",
-                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                }
-            }
-        } });
+      },
+    },{quoted:ms});
   }
  });
 
