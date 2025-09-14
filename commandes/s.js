@@ -54,7 +54,7 @@ async function downloadFromApis(apis) {
 
 // Audio download command
 fana({
-  nomCom: "pl",
+  nomCom: "play",
   aliases: ["song", "playdoc", "audio", "mp3"],
   categorie: "download",
   reaction: "🎶"
@@ -71,16 +71,11 @@ fana({
     
     await zk.sendMessage(dest, {
       text: `🎧 *tιtᥣᥱ:* ${video.title}
-🎬 *Chᥲnnᥱᥣ:* 
-⏱️ *Dᥙrᥲtιon:* 
-👀 *Vιᥱᥕs:* 
-
 
 *📥ᥲᥙtomᥲtιᥴ ᥲᥙdιo & doᥴ*
 
 *1.* 🎵 Doᥕnᥣoᥲd Aᥙdιo
-*2.* 🎥 Doᥕnᥣoᥲd Vιdᥱo  
-*3.* 📢 Oᥙr Chᥲnnᥱᥣ`,
+*2.* 🎥 Doᥕnᥣoᥲd Vιdᥱo `,
       contextInfo: getContextInfo("Downloading", userJid, video.thumbnail)
         }, { quoted: {
             key: {
@@ -131,7 +126,7 @@ fana({
 });
 
 fana({
-  nomCom: "vi",
+  nomCom: "video",
   aliases: ["videodoc", "film", "mp4"],
   categorie: "download",
   reaction: "🎬"
