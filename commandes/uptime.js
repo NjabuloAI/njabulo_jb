@@ -55,7 +55,7 @@ fana({ nomCom: 'alive',
          },
           forwardingScore: 999,
          externalAdReply: {
-         title: `💓 message am alive  ${runtime(process.uptime())}`,
+         title: `⏰ message am alive  ${runtime(process.uptime())}`,
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
@@ -75,9 +75,6 @@ fana({ nomCom: 'alive',
                 }
             }
         } });
-                }
-            }
-        }, { quoted: ms });
 
     } catch (e) {
         console.log("❌ uptime Command Error: " + e);
