@@ -614,7 +614,31 @@ function mybotpic() {
 
                                     await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") });
                                     (0, baileys_1.delay)(800);
-                                    await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
+                                    await zk.sendMessage(origineMessage, {
+                                    text: txt, 
+                                    mentions: [auteurMessage],
+                                    contextInfo: {
+                                    externalAdReply: {
+                                    title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
+                                     mediaType: 1,
+                                     previewType: 0,
+                                    thumbnailUrl: randomNjabulourl,
+                                    renderLargerThumbnail: false,
+                                        },
+                                       },
+                                         }, { quoted: {
+                                           key: {
+                                               fromMe: false,
+                                               participant: `0@s.whatsapp.net`,
+                                               remoteJid: "status@broadcast"
+                                           },
+                                           message: {
+                                               contactMessage: {
+                                                   displayName: "njᥲbᥙᥣo",
+                                                   vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                                               }
+                                           }
+                                       } });
                                     try {
                                         await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
                                     }
@@ -838,14 +862,20 @@ zk.ev.on('group-participants.update', async (group) => {
         const metadata = await zk.groupMetadata(group.id);
 
         if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'on')) {
-            let msg = `*mᥱssᥲgᥱ bot ᥕᥱᥣᥴomᥱ on groᥙρ*`;
+            let msg = `*message welcome on group*`;
             let membres = group.participants;
             for (let membre of membres) {
-                msg += ` \n•------» *Hᥱყ* 🖐️ @${membre.split("@")[0]} 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙. \n\n`;
+                msg += `
+                _________________________________
+                *Hᥱყ* 🖐️ @${membre.split("@")[0]} 
+                *Group* : ${nomGroupe}
+                _________________________________
+                `;
+            
             }
 
     
-            msg += `*Rᥱᥲd Thᥱ groᥙρ dᥱsᥴrιρtιons to ᥲvoιd gᥱttιng rᥱmovᥱ ყoᥙr😂* `;
+            msg += `*more visit on website njabulobw.com* `;
 
          zk.sendMessage(group.id, {
         image: { url: randomNjabulourl },
