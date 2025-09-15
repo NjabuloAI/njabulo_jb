@@ -619,7 +619,7 @@ function mybotpic() {
                                     contextInfo: {
                                          isForwarded: true,
                                           forwardedNewsletterMessageInfo: {
-                                         newsletterJid: '120363345407274799@newsletter',
+                                         newsletterJid: '120363399999197102@newsletter',
                                          newsletterName: "╭••➤®Njabulo Jb",
                                          serverMessageId: 143,
                                          },
@@ -663,7 +663,7 @@ function mybotpic() {
                                            contextInfo: {
                                          isForwarded: true,
                                           forwardedNewsletterMessageInfo: {
-                                         newsletterJid: '120363345407274799@newsletter',
+                                         newsletterJid: '120363399999197102@newsletter',
                                          newsletterName: "╭••➤®Njabulo Jb",
                                          serverMessageId: 143,
                                          },
@@ -817,7 +817,7 @@ function mybotpic() {
       contextInfo: {
      isForwarded: true,
        forwardedNewsletterMessageInfo: {
-       newsletterJid: '120363345407274799@newsletter',
+       newsletterJid: '120363399999197102@newsletter',
        newsletterName: "╭••➤®Njabulo Jb",
        serverMessageId: 143,
        },
@@ -950,7 +950,7 @@ zk.ev.on('group-participants.update', async (group) => {
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363345407274799@newsletter',
+         newsletterJid: '120363399999197102@newsletter',
          newsletterName: "╭••➤®Njabulo Jb",
          serverMessageId: 143,
          },
@@ -989,7 +989,7 @@ zk.ev.on('group-participants.update', async (group) => {
         contextInfo: {
        isForwarded: true,
        forwardedNewsletterMessageInfo: {
-       newsletterJid: '120363345407274799@newsletter',
+       newsletterJid: '120363399999197102@newsletter',
        newsletterName: "╭••➤®Njabulo Jb",
        serverMessageId: 143,
        },
@@ -1213,7 +1213,7 @@ ___________________________
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363345407274799@newsletter',
+         newsletterJid: '120363399999197102@newsletter',
          newsletterName: "╭••➤®Njabulo Jb",
          serverMessageId: 143,
          },
