@@ -616,7 +616,6 @@ function mybotpic() {
                                     (0, baileys_1.delay)(800);
                                     await zk.sendMessage(origineMessage, {
                                     text: txt, 
-                                    mentions: [auteurMessage],
                                     contextInfo: {
                                          isForwarded: true,
                                           forwardedNewsletterMessageInfo: {
@@ -660,7 +659,6 @@ function mybotpic() {
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { 
                                            text: txt, 
-                                           mentions: [auteurMessage],
                                            contextInfo: {
                                          isForwarded: true,
                                           forwardedNewsletterMessageInfo: {
