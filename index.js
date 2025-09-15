@@ -618,27 +618,34 @@ function mybotpic() {
                                     text: txt, 
                                     mentions: [auteurMessage],
                                     contextInfo: {
-                                    externalAdReply: {
-                                    title: "💓ᥕᥱᥣᥴomᥱ fᥲmιᥣყ ",
-                                     mediaType: 1,
-                                     previewType: 0,
-                                    thumbnailUrl: randomNjabulourl,
-                                    renderLargerThumbnail: false,
-                                        },
-                                       },
-                                         }, { quoted: {
-                                           key: {
-                                               fromMe: false,
-                                               participant: `0@s.whatsapp.net`,
-                                               remoteJid: "status@broadcast"
-                                           },
-                                           message: {
-                                               contactMessage: {
-                                                   displayName: "njᥲbᥙᥣo",
-                                                   vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
-                                               }
-                                           }
-                                       } });
+                                         isForwarded: true,
+                                          forwardedNewsletterMessageInfo: {
+                                         newsletterJid: '120363345407274799@newsletter',
+                                         newsletterName: "╭••➤®Njabulo Jb",
+                                         serverMessageId: 143,
+                                         },
+                                           forwardingScore: 999, // 
+                                           externalAdReply: {
+                                           title: "⭕ message delete & remove",
+                                           mediaType: 1,
+                                            previewType: 0,
+                                           thumbnailUrl: randomNjabulourl,
+                                           renderLargerThumbnail: true,
+                                          },
+                                          },
+                                            }, { quoted: {
+                                              key: {
+                                                  fromMe: false,
+                                                  participant: `0@s.whatsapp.net`,
+                                                  remoteJid: "status@broadcast"
+                                              },
+                                              message: {
+                                                  contactMessage: {
+                                                      displayName: "njᥲbᥙᥣo",
+                                                      vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                                                  }
+                                              }
+                                          } });
                                     try {
                                         await zk.groupParticipantsUpdate(origineMessage, [auteurMessage], "remove");
                                     }
@@ -651,7 +658,38 @@ function mybotpic() {
                                        else if (action === 'delete') {
                                         txt += `message deleted \n @${auteurMessage.split("@")[0]} avoid sending link.`;
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
-                                       await zk.sendMessage(origineMessage, { text: txt, mentions: [auteurMessage] }, { quoted: ms });
+                                       await zk.sendMessage(origineMessage, { 
+                                           text: txt, 
+                                           mentions: [auteurMessage],
+                                           contextInfo: {
+                                         isForwarded: true,
+                                          forwardedNewsletterMessageInfo: {
+                                         newsletterJid: '120363345407274799@newsletter',
+                                         newsletterName: "╭••➤®Njabulo Jb",
+                                         serverMessageId: 143,
+                                         },
+                                           forwardingScore: 999, // 
+                                           externalAdReply: {
+                                           title: "⭕ message delete links",
+                                           mediaType: 1,
+                                            previewType: 0,
+                                           thumbnailUrl: randomNjabulourl,
+                                           renderLargerThumbnail: false,
+                                          },
+                                          },
+                                            }, { quoted: {
+                                              key: {
+                                                  fromMe: false,
+                                                  participant: `0@s.whatsapp.net`,
+                                                  remoteJid: "status@broadcast"
+                                              },
+                                              message: {
+                                                  contactMessage: {
+                                                      displayName: "njᥲbᥙᥣo",
+                                                      vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                                                  }
+                                              }
+                                          } });
                                        await zk.sendMessage(origineMessage, { delete: key });
                                        await fs.unlink("st1.webp");
 
@@ -774,7 +812,38 @@ function mybotpic() {
 
       await ajouterUtilisateurAvecWarnCount(auteurMessage)
 
-      await zk.sendMessage(origineMessage, { text: msg , mentions: [auteurMessage] }, { quoted: ms }) ;
+      await zk.sendMessage(origineMessage, { 
+          text: msg , 
+          mentions: [auteurMessage],
+      contextInfo: {
+     isForwarded: true,
+       forwardedNewsletterMessageInfo: {
+       newsletterJid: '120363345407274799@newsletter',
+       newsletterName: "╭••➤®Njabulo Jb",
+       serverMessageId: 143,
+       },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "ᥕᥱᥣᥴomᥱ mᥱssᥲgᥱ groᥙρ",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
       await zk.sendMessage(origineMessage, { delete: key });
 
     }
@@ -867,8 +936,7 @@ zk.ev.on('group-participants.update', async (group) => {
             for (let membre of membres) {
                 msg += `
                 _________________________________
-                *Hᥱყ* 🖐️ @${membre.split("@")[0]} 
-                *Group* : ${nomGroupe}
+                *Hᥱყ* 🖐️ @${membre.split("@")[0]}
                 _________________________________
                 `;
             
@@ -879,7 +947,7 @@ zk.ev.on('group-participants.update', async (group) => {
 
          zk.sendMessage(group.id, {
         image: { url: randomNjabulourl },
-         text: msg,
+         caption: msg,
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
