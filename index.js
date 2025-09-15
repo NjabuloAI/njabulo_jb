@@ -659,6 +659,7 @@ function mybotpic() {
                                         // await zk.sendMessage(origineMessage, { sticker: fs.readFileSync("st1.webp") }, { quoted: ms });
                                        await zk.sendMessage(origineMessage, { 
                                            text: txt, 
+                                          mentions: [auteurMessage],
                                            contextInfo: {
                                          isForwarded: true,
                                           forwardedNewsletterMessageInfo: {
@@ -822,7 +823,7 @@ function mybotpic() {
        },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "ᥕᥱᥣᥴomᥱ mᥱssᥲgᥱ groᥙρ",
+         title: "⭕ message warn",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
@@ -955,7 +956,7 @@ zk.ev.on('group-participants.update', async (group) => {
          },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "ᥕᥱᥣᥴomᥱ mᥱssᥲgᥱ groᥙρ ",
+         title: "🖐️ message welcome on group",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
@@ -994,7 +995,7 @@ zk.ev.on('group-participants.update', async (group) => {
        },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "ᥕᥱᥣᥴomᥱ mᥱssᥲgᥱ groᥙρ",
+         title: "😡 goodbye will gonna miss you",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
