@@ -1223,7 +1223,7 @@ ___________________________
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: true,
+         renderLargerThumbnail: false,
         },
         },
           }, { quoted: {
