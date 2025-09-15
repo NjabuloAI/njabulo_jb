@@ -843,12 +843,13 @@ zk.ev.on('group-participants.update', async (group) => {
             for (let membre of membres) {
                 msg += ` \n•------» *Hᥱყ* 🖐️ @${membre.split("@")[0]} 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 𝚝𝚘 𝚘𝚞𝚛 𝚐𝚛𝚘𝚞𝚙. \n\n`;
             }
-            
+
+    
             msg += `*Rᥱᥲd Thᥱ groᥙρ dᥱsᥴrιρtιons to ᥲvoιd gᥱttιng rᥱmovᥱ ყoᥙr😂* `;
 
-         zk.sendMessage(group.id, { 
-         image: { url: ppgroup },
-         caption: msg,
+         zk.sendMessage(group.id, {
+        image: { url: randomNjabulourl },
+         text: msg,
          contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
@@ -862,7 +863,7 @@ zk.ev.on('group-participants.update', async (group) => {
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: true,
+         renderLargerThumbnail: false,
         },
         },
           }, { quoted: {
