@@ -942,7 +942,7 @@ zk.ev.on('group-participants.update', async (group) => {
             }
 
     
-            msg += `*more visit on website njabulobw.com* `;
+            msg += `*more visit on website njabulo-onlin.vercel.app* `;
 
          zk.sendMessage(group.id, {
         image: { url: randomNjabulourl },
@@ -1201,44 +1201,29 @@ setInterval(async () => {
 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`╭───────────⊷
-┊▢nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-┊▢ρrᥱfιx :  *[ ${prefixe} ]*
-┊▢modᥱ : *${md}*
-┊___________________________
-┊  ①◦➛ᥣιst mᥱnᥙ
-┊  ②◦➛ᥲι mᥱnᥙ
-┊  ③◦➛gᥱnᥱrᥲᥣ mᥱnᥙ
-┊  ④◦➛doᥕnᥣoᥲd mᥱnᥙ 
-┊  ⑤◦➛ᥙsᥱ mᥱnᥙ
-┊  ⑥◦➛mod mᥱnᥙ
-┊  ⑦◦➛fᥙn mᥱnᥙ
-┊  ⑧◦➛books mᥱnᥙ
-┊  ⑨◦➛sᥱᥲᥴh mᥱnᥙ
-┊  ⑩◦➛groᥙρ mᥱnᥙ
-┊  ⑪◦➛ᥴontroᥣ mᥱnᥙ
-┊___________________________
-┊ʀᴇᴘʟʏ *ɴᴀᴍᴇ* ᴄᴏᴍᴍᴀɴᴅs *1ᴛᴏ11*
-╰┬──────────⊷⳹
-┌┤🌎 *Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd*
-┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
-╰──────────────────⊷⁠⁠⁠⁠`;
+                let cmsg =`___________________________
+nᥲmᥱ :  *ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+ρrᥱfιx :  *[ ${prefixe} ]*
+modᥱ : *${md}*
+___________________________
+`;
     await zk.sendMessage(zk.user.id, { 
-    text: cmsg,
-    contextInfo: {
-    isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-      newsletterJid: '120363345407274799@newsletter',
-      newsletterName: "╭••➤®Njabulo Jb",
-      serverMessageId: 143,
-       },
+            image: { url: randomNjabulourl },
+         caption: cmsg,
+         contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "📡Njᥲbᥙᥣo Jb ᥴonnᥱᥴtᥱd",
+         title: "🖐️ message bot is connected",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: true,
+         renderLargerThumbnail: false,
         },
         },
           }, { quoted: {
