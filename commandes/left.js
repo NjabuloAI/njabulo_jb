@@ -24,15 +24,34 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-     externalAdReply: {
-         title: "njᥲbᥙᥣo jb",
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "⏰ message group left",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
          renderLargerThumbnail: false,
         },
         },
-          }, { quoted: ms });
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 }
 
 fana({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
@@ -41,6 +60,6 @@ fana({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) =>
   if (!verifGroupe) return await sendFormattedMessage(zk, dest, "σrdєr rєsєrvєd fσr grσup σnlч", ms);
   if (!superUser) return await sendFormattedMessage(zk, dest, "cσmmαnd rєsєrvєd fσr thє вσt σwnєr", ms);
 
-  await sendFormattedMessage(zk, dest, 'Goodbye on this group!', ms);
+  await sendFormattedMessage(zk, dest, '*Goodbye on this group!🥲*', ms);
   await zk.groupLeave(dest);
 });
