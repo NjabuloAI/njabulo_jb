@@ -1,5 +1,4 @@
 const { fana } = require("../njabulo/fana")
-//const { getGroupe } = require("../bdd/groupe")
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
 const {ajouterOuMettreAJourJid,mettreAJourAction,verifierEtatJid} = require("../bdd/antilien")
 const {atbajouterOuMettreAJourJid,atbverifierEtatJid} = require("../bdd/antibot")
@@ -36,28 +35,12 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
           }, { quoted: ms });
 }
 
-fana({ nomCom: "tagall", categorie: 'Group', reaction: "🚨" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "left", categorie: "Mods" }, async (dest, zk, commandeOptions) => {
 
-  const { ms, repondre, arg, verifGroupe, nomGroupe, infosGroupe, nomAuteurMessage, verifAdmin, superUser } = commandeOptions
+  const { repondre, verifGroupe, superUser, ms } = commandeOptions;
+  if (!verifGroupe) return await sendFormattedMessage(zk, dest, "σrdєr rєsєrvєd fσr grσup σnlч", ms);
+  if (!superUser) return await sendFormattedMessage(zk, dest, "cσmmαnd rєsєrvєd fσr thє вσt σwnєr", ms);
 
-  if (!verifGroupe) return await sendFormattedMessage(zk, dest, "thís cσmmαnd ís rєsєrvєd fσr grσups", ms);
-
-  let mess = arg.join(' ') || 'Aucun Message';
-  let membresGroupe = verifGroupe ? await infosGroupe.participants : "";
-  let tag = `*Group* : *${nomGroupe}* \n*Message* : *${mess}*\n\n`;
-  let emoji = ['> ᴅᴇᴀʀ💗'];
-  let random = Math.floor(Math.random() * emoji.length);
-
-  for (const membre of membresGroupe) {
-    tag += `${emoji[random]} @${membre.id.split("@")[0]}\n`;
-  }
-
-  if (verifAdmin || superUser) {
-    await zk.sendMessage(dest, {
-      text: tag,
-      mentions: membresGroupe.map((i) => i.id)
-    }, { quoted: ms });
-  } else {
-    await sendFormattedMessage(zk, dest, 'command reserved for admins', ms);
-  }
+  await sendFormattedMessage(zk, dest, 'Goodbye on this group!', ms);
+  await zk.groupLeave(dest);
 });
