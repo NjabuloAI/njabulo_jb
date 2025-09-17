@@ -18,15 +18,34 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-     externalAdReply: {
-         title: "njᥲbᥙᥣo jb",
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🖋️message front text",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
          renderLargerThumbnail: false,
         },
         },
-          }, { quoted: ms });
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 }
 
 fana({ nomCom: "fancy", categorie: "Fun", reaction: "✍️" }, async (dest, zk, commandeOptions) => {
@@ -36,7 +55,7 @@ fana({ nomCom: "fancy", categorie: "Fun", reaction: "✍️" }, async (dest, zk,
 
   try {
     if (id === undefined || text === undefined) {
-      return await sendFormattedMessage(zk, dest, `\nExemple : ${prefixe}fancy 10 VW GOLF\n` + String.fromCharCode(8206).repeat(4001) + fancy.list('Njabulo Jb 2025', fancy), ms);
+      return await sendFormattedMessage(zk, dest, `\nExemple : ${prefixe}fancy 10 Njabulo Jb\n` + String.fromCharCode(8206).repeat(4001) + fancy.list('Njabulo Jb 2025', fancy), ms);
     }
 
     const selectedStyle = fancy[parseInt(id) - 1];
