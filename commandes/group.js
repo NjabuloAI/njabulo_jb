@@ -37,7 +37,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: true,
+         renderLargerThumbnail: false,
         },
         },
           }, { quoted: {
