@@ -25,15 +25,34 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-     externalAdReply: {
-         title: "njᥲbᥙᥣo jb",
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🥲message group tagall pet",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
          renderLargerThumbnail: false,
         },
         },
-          }, { quoted: ms });
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 }
 
 fana({ nomCom: "tagall", categorie: 'Group', reaction: "🚨" }, async (dest, zk, commandeOptions) => {
@@ -45,7 +64,7 @@ fana({ nomCom: "tagall", categorie: 'Group', reaction: "🚨" }, async (dest, zk
   let mess = arg.join(' ') || 'Aucun Message';
   let membresGroupe = verifGroupe ? await infosGroupe.participants : "";
   let tag = `*Group* : *${nomGroupe}* \n*Message* : *${mess}*\n\n`;
-  let emoji = ['> ᴅᴇᴀʀ💗'];
+  let emoji = ['> ᴅᴇᴀʀ😡'];
   let random = Math.floor(Math.random() * emoji.length);
 
   for (const membre of membresGroupe) {
@@ -55,8 +74,35 @@ fana({ nomCom: "tagall", categorie: 'Group', reaction: "🚨" }, async (dest, zk
   if (verifAdmin || superUser) {
     await zk.sendMessage(dest, {
       text: tag,
-      mentions: membresGroupe.map((i) => i.id)
-    }, { quoted: ms });
+    contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🥲message group tagall people",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
   } else {
     await sendFormattedMessage(zk, dest, 'command reserved for admins', ms);
   }
