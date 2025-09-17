@@ -24,22 +24,41 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
   await zk.sendMessage(chatId, {
     text,
     contextInfo: {
-     externalAdReply: {
-         title: "nj?b??o jb",
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "â•­â€¢â€¢âž¤Â®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "ðŸ—‘ï¸ message delete",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
          renderLargerThumbnail: false,
         },
         },
-          }, { quoted: ms });
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njá¥²bá¥™á¥£o",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
 }
 
-fana({ nomCom: "del", categorie: 'Group',reaction:"ð?§¹" }, async (dest, zk, commandeOptions) => {
+fana({ nomCom: "del", categorie: 'Group',reaction:"Ã°?Â§Â¹" }, async (dest, zk, commandeOptions) => {
 
   const { ms, repondre, verifGroupe,auteurMsgRepondu,idBot, msgRepondu, verifAdmin, superUser} = commandeOptions;
   
-  if (!msgRepondu) return await sendFormattedMessage(zk, dest, "Please mention the message to delete.", ms);
+  if (!msgRepondu) return await sendFormattedMessage(zk, dest, "*Please mention the message to delete.*", ms);
 
   if(superUser && auteurMsgRepondu==idBot) {
     const key = {
@@ -48,7 +67,7 @@ fana({ nomCom: "del", categorie: 'Group',reaction:"ð?§¹" }, async (dest, zk, com
       id: ms.message.extendedTextMessage.contextInfo.stanzaId,
     }
     await zk.sendMessage(dest, { delete: key });
-    await sendFormattedMessage(zk, dest, "Message deleted successfully.", ms);
+    await sendFormattedMessage(zk, dest, "*Message deleted successfully.*", ms);
     return;
   }
 
@@ -62,12 +81,12 @@ fana({ nomCom: "del", categorie: 'Group',reaction:"ð?§¹" }, async (dest, zk, com
           participant: ms.message.extendedTextMessage.contextInfo.participant
         }
         await zk.sendMessage(dest, { delete: key });
-        await sendFormattedMessage(zk, dest, "Message deleted successfully.", ms);
+        await sendFormattedMessage(zk, dest, "*Message deleted successfully.*", ms);
       } catch (e) {
-        await sendFormattedMessage(zk, dest, "I need admin rights.", ms);
+        await sendFormattedMessage(zk, dest, "*I need admin rights.*", ms);
       }
     } else {
-      await sendFormattedMessage(zk, dest, "Sorry, you are not an administrator of the group.", ms);
+      await sendFormattedMessage(zk, dest, "*Sorry, you are not an administrator of the group.*", ms);
     }
   }
 });
