@@ -4,7 +4,7 @@ const {uploadImageToImgur} = require("../fana/imgur")
 
 // Generic function to create a canvacord order
 function createCanvacordCommand(commandName, canvacordFunction) {
-  ezra({
+  fana({
     nomCom: commandName,
     categorie: "Image-Edit",
     reaction: "🎉"
@@ -28,7 +28,29 @@ function createCanvacordCommand(commandName, canvacordFunction) {
 
       const result = await canvacordFunction(img);
 
-      await zk.sendMessage(origineMessage, { image: result }, { quoted: ms });
+      await zk.sendMessage(origineMessage, {
+        image: result,
+      contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363345407274799@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     } catch (error) {
       console.error(`Error when ordering "${commandName}":`, error);
     }
