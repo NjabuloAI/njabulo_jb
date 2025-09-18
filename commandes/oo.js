@@ -62,14 +62,7 @@ fana({
       zk.sendMessage(dest, {
         image: { url: results[i].url },
         caption: `DOWNLOAD AND ENJOY BY VW-GOLF`,
-        contextInfo: {
-          isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363345407274799@newsletter',
-            newsletterName: "vw-golf",
-            serverMessageId: 143,
-          }
-        }
+        buttons: buttons,
       }, { quoted: ms });
     }
   }
