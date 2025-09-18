@@ -33,7 +33,7 @@ async (dest, zk, commandeOptions) => {
 
     const stickerMess = new Sticker(gifUrl, {
       pack: packname,
-      author: 'VW GOLF',
+      author: 'njabulo jb',
       type: StickerTypes.FULL,
       categories: ["🤩", "🎉"],
       id: "12345",
@@ -41,7 +41,22 @@ async (dest, zk, commandeOptions) => {
       background: "transparent",
     });
     const stickerBuffer2 = await stickerMess.toBuffer();
-    zk.sendMessage(dest, { sticker: stickerBuffer2 }, { quoted: ms }); }
+    zk.sendMessage(dest, {
+      sticker: stickerBuffer2,
+        }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "NנɐႦυℓσ נႦ✆︎",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+  }
   } catch (error) {
     console.error("Erreur lors de la recherche de stickers :", error);
     repondre("Erreur lors de la recherche de stickers.");
