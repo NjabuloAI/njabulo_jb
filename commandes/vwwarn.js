@@ -1,5 +1,5 @@
 const { fana } = require('../njabulo/fana');
-const {ajouterUtilisateurAvecWarnCount , getWarnCountByJID , resetWarnCountByJID} = require('../luckydatabase/warn')
+const {ajouterUtilisateurAvecWarnCount , getWarnCountByJID , resetWarnCountByJID} = require('../bdd/warn')
 const s = require("../set")
 
     // List of image URLs
