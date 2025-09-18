@@ -46,8 +46,6 @@ fana({ nomCom: "owner", categorie: "General", reaction: "🪰" }, async (dest, z
         contacts: {
             displayName: conf.OWNER_NAME,
             contacts: [{ vcard }],
-        },
-       contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
          newsletterJid: '120363399999197102@newsletter',
@@ -60,7 +58,7 @@ fana({ nomCom: "owner", categorie: "General", reaction: "🪰" }, async (dest, z
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
-         renderLargerThumbnail: false,
+         renderLargerThumbnail: true,
         },
         },
           }, { quoted: {
