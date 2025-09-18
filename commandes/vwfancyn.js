@@ -20,7 +20,7 @@ async function sendFormattedMessage(zk, chatId, text, ms) {
     contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363345407274799@newsletter',
+         newsletterJid: '120363399999197102@newsletter',
          newsletterName: "╭••➤®Njabulo Jb",
          serverMessageId: 143,
          },
