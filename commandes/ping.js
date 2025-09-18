@@ -52,16 +52,15 @@ const date = moment().format('DD/MM/YYYY');
     
     // Reply with ping results
     await zk.sendMessage(dest, {
-        text: `🏓 *ᴘɪɴɢ!*
+        text: `🏓 *sᴛᴀᴛᴜs!*
 
-⚡ *sᴘᴇᴇᴅ:*  ${formattedResults}
-🔴 *ϙᴜᴀʟɪᴛʏ:* hide
-🕒 time: ${temps}
-📅 daye: ${date}
+⚡ *ᴘᴏɴɢ:*  ${formattedResults}ᴍs
+🕒 *ᴛɪᴍᴇ:* ${temps}
+📅 *ᴅᴀᴛᴇ:* ${date}
 
-╭━━━━━━━━━━━━━━━━╮
-┃  🤖 *Njabulo Jb status bot*  🚀
-╰━━━━━━━━━━━━━━━━╯
+________________________________
+> .🤖 *Njabulo Jb status bot*  
+________________________________⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ║    ᴄᴏɴɴᴇᴄᴛɪᴏɴ sᴛᴀᴛᴜs  
 ───────────────────`,
            contextInfo: {
