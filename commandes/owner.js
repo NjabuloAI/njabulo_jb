@@ -42,10 +42,10 @@ fana({ nomCom: "owner", categorie: "General", reaction: "🪰" }, async (dest, z
         'ORG:undefined;\n' + // the organization of the contact
         'TEL;type=CELL;type=VOICE;waid=' + conf.NUMERO_OWNER + ':+' + conf.NUMERO_OWNER + '\n' + // WhatsApp ID + phone number
         'END:VCARD';
-    zk.sendMessage(dest, {
-        contacts: {
-            displayName: conf.OWNER_NAME,
-            contacts: [{ vcard }],
+       zk.sendMessage(dest, {
+         displayName: conf.OWNER_NAME,
+         contacts: [{ vcard }],
+        contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
          newsletterJid: '120363399999197102@newsletter',
@@ -54,7 +54,7 @@ fana({ nomCom: "owner", categorie: "General", reaction: "🪰" }, async (dest, z
          },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "⏰ message group open & close",
+         title: conf.OWNER_NAME,
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
