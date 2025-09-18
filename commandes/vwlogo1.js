@@ -91,7 +91,7 @@ Lᥱt mᥱ knoᥕ ιf ყoᥙ nᥱᥱd fᥙrthᥱr ᥲssιstᥲnᥴᥱ!`;
          },
          forwardingScore: 999, // 
          externalAdReply: {
-         title: "⏰ message group open & close",
+         title: "🖼️message logo edit image",
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: randomNjabulourl,
@@ -278,8 +278,28 @@ Lᥱt mᥱ knoᥕ ιf ყoᥙ nᥱᥱd fᥙrthᥱr ᥲssιstᥲnᥴᥱ!`;
         if (logoUrl) {
           await zk.sendMessage(dest, {
             image: { url: logoUrl },
-            caption: `*Created logo by Lucky Md*`,
-          }, { quoted: ms });
+            caption: `*Created logo by Njabulo Jb logo*`,
+          contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
         }
       }
     });
