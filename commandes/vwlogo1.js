@@ -5,6 +5,18 @@ fana({ nomCom: "logo", categorie: "Search", reaction: "🤭" }, async (dest, zk,
   const { ms, repondre, arg } = commandeOptions;
   const text = arg.join(" ");
 
+  // List of image URLs
+    const njabulox = [
+        "https://files.catbox.moe/iii5jv.jpg",
+        "https://files.catbox.moe/xjeyjh.jpg",
+        "https://files.catbox.moe/mh36c7.jpg",
+        "https://files.catbox.moe/u6v5ir.jpg",
+        "https://files.catbox.moe/bnb3vx.jpg" // New image added
+    ];
+
+    // Select a random image file
+    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
   if (!text) {
     repondre("Please provide a search query.");
     return;
@@ -14,68 +26,78 @@ fana({ nomCom: "logo", categorie: "Search", reaction: "🤭" }, async (dest, zk,
     // Message content
     const messageText = `Reply with below numbers to generate *${text}* logo
 
-1⊷Black Pink pink logo with members signature  
-2⊷ Black Pink style 
-3⊷ Silver 3D  
-4⊷ Naruto  
-5⊷ Digital Glitch
-6⊷ Birthday cake  
-7⊷ Zodiac 
-8⊷ Underwater 🫧
-9⊷ Glow 🌟
-10⊷ Avatar gold🥇  
-11⊷ Bokeh 
-12⊷ Fireworks 🎇
-13⊷ Gaming logo 
-14⊷ Signature 💫 
-15⊷ Luxury 
-16⊷ Dragon fire 🐉
-17⊷ Queen card
-18⊷ Graffiti color   
-19⊷ Tattoo 
-20⊷ Pentakill 🔥
-21⊷ Halloween 🎃
-22⊷ Horror    
-23⊷ Blood 🩸
-24⊷ Women's day    
-25⊷ Valentine 
-26⊷ Neon light 🕯️
-27⊷ Gaming assassin 
-28⊷ Foggy glass 
-29⊷ Sand summer beach 🏖️
-30⊷ Light 🚨  
-31⊷ Modern gold 🪙
-32⊷ Cartoon style graffiti 
-33⊷ Galaxy ❤️‍🔥
-34⊷ Anonymous hacker (avatar cyan neon)
-35⊷ Birthday flower cake 🎂
-36⊷ Dragon 🐲 ball 
-37⊷ Elegant rotation 
-38⊷ Write text on wet glass
-39⊷ Water 3D 
-40⊷ Realistic sand ⌛
-41⊷ PUBG mascot
-42⊷ Typography 
-43⊷ Naruto Shippuden 
-44⊷ Colourful paint 🎨
-45⊷ Typography maker
-46⊷ Incandescent
-47⊷ Cartoon style graffiti 
-48⊷ Galaxy ❤️‍🔥
-49⊷ Anonymous hacker (avatar cyan neon)
-50⊷ Birthday cake
+Hᥱrᥱ ιs thᥱ ᥣιst ᥕιth nᥙmbᥱrs:
 
-*Stay connected 😊🤦*`;
+① Bᥣᥲᥴk Pιnk ριnk ᥣogo ᥕιth mᥱmbᥱrs sιgnᥲtᥙrᥱ
+② Bᥣᥲᥴk Pιnk stყᥣᥱ
+③ Sιᥣvᥱr 3D
+④ Nᥲrᥙto
+⑤ Dιgιtᥲᥣ Gᥣιtᥴh
+⑥ Bιrthdᥲყ ᥴᥲkᥱ
+⑦ Zodιᥲᥴ
+⑧ Undᥱrᥕᥲtᥱr 🫧
+⑨ Gᥣoᥕ 🌟
+⑩ Avᥲtᥲr goᥣd🥇
+⑪ Bokᥱh
+⑫ Fιrᥱᥕorks 🎇
+⑬ Gᥲmιng ᥣogo
+⑭ Sιgnᥲtᥙrᥱ 💫
+⑮ Lᥙxᥙrყ
+⑯ Drᥲgon fιrᥱ 🐉
+⑰ Qᥙᥱᥱn ᥴᥲrd
+⑱ Grᥲffιtι ᥴoᥣor
+⑲ Tᥲttoo
+⑳ Pᥱntᥲkιᥣᥣ 🔥
+㉑ Hᥲᥣᥣoᥕᥱᥱn 🎃
+㉒ Horror
+㉓ Bᥣood 🩸
+㉔ Womᥱn's dᥲყ
+㉕ Vᥲᥣᥱntιnᥱ
+㉖ Nᥱon ᥣιght 🕯️
+㉗ Gᥲmιng ᥲssᥲssιn
+㉘ Foggყ gᥣᥲss
+㉙ Sᥲnd sᥙmmᥱr bᥱᥲᥴh 🏖️
+㉚ Lιght 🚨
+㉛ Modᥱrn goᥣd 🪙
+㉜ Cᥲrtoon stყᥣᥱ grᥲffιtι
+㉝ Gᥲᥣᥲxყ ❤️‍🔥
+㉞ Anonყmoᥙs hᥲᥴkᥱr (ᥲvᥲtᥲr ᥴყᥲn nᥱon)
+㉟ Bιrthdᥲყ fᥣoᥕᥱr ᥴᥲkᥱ 🎂
+㊱ Drᥲgon 🐲 bᥲᥣᥣ
+㊲ Eᥣᥱgᥲnt rotᥲtιon
+㊳ Wrιtᥱ tᥱxt on ᥕᥱt gᥣᥲss
+㊴ Wᥲtᥱr 3D
+㊵ Rᥱᥲᥣιstιᥴ sᥲnd ⌛
+㊶ PUBG mᥲsᥴot
+㊷ Tყρogrᥲρhყ
+㊸ Nᥲrᥙto Shιρρᥙdᥱn
+㊹ Coᥣoᥙrfᥙᥣ ρᥲιnt 🎨
+㊺ Tყρogrᥲρhყ mᥲkᥱr
+㊻ Inᥴᥲndᥱsᥴᥱnt
+㊼ Cᥲrtoon stყᥣᥱ grᥲffιtι
+㊽ Gᥲᥣᥲxყ ❤️‍🔥
+㊾ Anonყmoᥙs hᥲᥴkᥱr (ᥲvᥲtᥲr ᥴყᥲn nᥱon)
+㊿ Bιrthdᥲყ ᥴᥲkᥱ
 
-    const contextInfo = {
-      mentionedJid: [ms.sender], // Mention the sender
+Lᥱt mᥱ knoᥕ ιf ყoᥙ nᥱᥱd fᥙrthᥱr ᥲssιstᥲnᥴᥱ!`;
+
+    const contextInfo = { 
+      mentionedJid: [ms.sender], // Mention the sender        
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363345407274799@newsletter',
-         newsletterName: "vw golf",
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
          serverMessageId: 143,
-      },
-    };
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "⏰ message group open & close",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: randomNjabulourl,
+         renderLargerThumbnail: true,
+        }
+        }
 
     const messageToSend = {
       text: messageText,
