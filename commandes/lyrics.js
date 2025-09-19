@@ -2,9 +2,9 @@ const { fana } = require("../njabulo/fana");
 const axios = require('axios');
 
 fana({
-  nomCom: "lyricsi",
+  nomCom: "lyrics",
  3,
-  aliases: ["lyric"],
+  aliases: ["lyrici"],
   categorie: "search",
   reaction: "📝"
 }, async (dest, zk, commandOptions) => {
