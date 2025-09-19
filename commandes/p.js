@@ -97,24 +97,22 @@ fana({
           `╰────────────────◆\n\n` +
           `🔗 ${video.url}`,
         contextInfo: {
-        isForwarded: true,
-          forwardedNewsletterMessageInfo: {
-          newsletterJid: '120363345407274799@newsletter',
-          newsletterName: "NJABULO JB",
-          serverMessageId: 143,
-          },
-          forwardingScore: 999, // Score to indicate it has been forwarded
-          externalAdReply: {
-            title: "ɳᴊᴀʙᴜʟᴏ ᴊʙ σғғɪᴄᴇ",
-            body: "fast via",
-            thumbnailUrl: 'https://files.catbox.moe/7bnzea.jpg', // Add thumbnail URL if required 
-            sourceUrl: 'https://whatsapp.com/channel/0029VarYP5iAInPtfQ8fRb2T', // Add source URL if necessary
-            mediaType: 1,
-            renderLargerThumbnail: true
-          }
-          }
-    
-         }, { quoted: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🎸 message YouTube downloader",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: video.thumbnail,
+         renderLargerThumbnail: true,
+        },
+        },
+          }, { quoted: {
             key: {
                 fromMe: false,
                 participant: `0@s.whatsapp.net`,
@@ -122,7 +120,7 @@ fana({
             },
             message: {
                 contactMessage: {
-                    displayName: "NנɐႦυℓσ נႦ₪",
+                    displayName: "njᥲbᥙᥣo",
                     vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
                 }
             }
@@ -133,8 +131,28 @@ fana({
         audio: { url: data.downloadLink },
         mimetype: 'audio/mpeg',
         fileName,
-        caption: 'Song downloaded'
-      });
+       contextInfo: {
+         externalAdReply: {
+         title: "⏰ message group open & close",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: video.thumbnail,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
       console.log('Audio file sent');
     } catch (err) {
       console.error('[PLAY] API Error:', err);
