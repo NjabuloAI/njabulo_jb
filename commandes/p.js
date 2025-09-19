@@ -86,8 +86,7 @@ fana({
 
       await zk.sendMessage(dest,{ 
         image: { url: video.thumbnail },
-        caption: `
-╭───────────⊷
+        caption: `╭───────────⊷
 ┊▢tιtᥣᥱ: ${video.title}
 ┊▢dᥙrᥲtιon: ${video.timestamp}
 ┊▢vιᥱᥕs: ${video.views.toLocaleString()}
@@ -97,24 +96,17 @@ fana({
 ┊ ①◦➛ρᥣᥲყ doᥕnᥣoᥲd
 ┊ ②◦➛song doᥕnᥣoᥲd
 ┊ ③◦➛vιdᥱo doᥕnᥣoᥲd 
-┊ ④◦➛doᥕnᥣoᥲd-mᥱnᥙ 
+┊ ④◦➛ *doᥕnᥣoᥲd-mᥱnᥙ*
 ┊___________________________
-┊ʀᴇᴘʟʏ ʜɪ ᴡɪᴛʜ *ɴᴀᴍᴇ* ʟɪᴋᴇ *ᴀɪ-ᴍᴇɴᴜ*
+┊ *ɴᴊᴀʙᴜʟᴏᴊʙ* ᴀᴜᴛᴏᴍᴀᴛɪᴄ sᴇɴᴅ *ᴀᴜᴅɪᴏ*
 ╰┬──────────⊷⳹
 ┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ Good ᥲftᥱrnnon!*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷
           🔗 ${video.url}`,
         contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-         },
-         forwardingScore: 999, // 
          externalAdReply: {
-         title: "🎸 message YouTube downloader",
+         title: video.title,
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: video.thumbnail,
