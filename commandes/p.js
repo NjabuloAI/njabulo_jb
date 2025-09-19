@@ -96,6 +96,23 @@ fana({
           `│⿻ *Channel:* ${video.author.name}\n` +
           `╰────────────────◆\n\n` +
           `🔗 ${video.url}`,
+        contextInfo: {
+        isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+          newsletterJid: '120363345407274799@newsletter',
+          newsletterName: "NJABULO JB",
+          serverMessageId: 143,
+          },
+          forwardingScore: 999, // Score to indicate it has been forwarded
+          externalAdReply: {
+            title: "ɳᴊᴀʙᴜʟᴏ ᴊʙ σғғɪᴄᴇ",
+            body: "fast via",
+            thumbnailUrl: 'https://files.catbox.moe/7bnzea.jpg', // Add thumbnail URL if required 
+            sourceUrl: 'https://whatsapp.com/channel/0029VarYP5iAInPtfQ8fRb2T', // Add source URL if necessary
+            mediaType: 1,
+            renderLargerThumbnail: true
+          }
+          }
       };
 
       await zk.sendMessage(dest, message);
