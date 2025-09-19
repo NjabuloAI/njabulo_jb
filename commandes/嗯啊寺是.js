@@ -55,14 +55,15 @@ const date = moment().format('DD/MM/YYYY');
         text: `🏓 *sᴛᴀᴛᴜs!*
 
 ⚡ *ᴘᴏɴɢ:*  ${formattedResults}ᴍs
+🔴 *ϙᴜᴀʟɪᴛʏ:* hide
 🕒 *ᴛɪᴍᴇ:* ${temps}
 📅 *ᴅᴀᴛᴇ:* ${date}
 
-________________________________
-> .🤖 *Njabulo Jb status bot*  
-________________________________⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╭━━━━━━━━━━━━━━━━╮
+┃  🤖 *Njabulo Jb status bot*  🚀
+╰━━━━━━━━━━━━━━━━╯
 ║    ᴄᴏɴɴᴇᴄᴛɪᴏɴ sᴛᴀᴛᴜs  
-───────────────────`,
+───────────────────𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭`,
            contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
