@@ -12,7 +12,37 @@ fana({
   const { arg, ms, userJid } = commandOptions;
 
   try {
-    await zk.sendMessage(dest, { text: 'Searching for your song...' });
+    await zk.sendMessage(dest, {
+      text: 'Searching for your song...',
+    contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+         },
+         forwardingScore: 999, // 
+         externalAdReply: {
+         title: "🎸 YouTube downloader query",
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: "https://files.catbox.moe/iii5jv.jpg",
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     console.log('Searching for song...');
 
     if (!arg) {
