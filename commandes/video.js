@@ -12,12 +12,56 @@ fana({
   const { arg, ms, userJid } = commandOptions;
 
   try {
-    await zk.sendMessage(dest, { text: 'Searching for your video...' });
+    await zk.sendMessage(dest, { 
+      text: '*vιᥱᥕ ᥴhᥲnnᥱᥣ ᥲnd Sᥱᥲrᥴhιng for ყoᥙr video♫...*',
+      contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     console.log('Searching for video...');
 
     if (!arg) {
       console.log('No argument provided');
-      return zk.sendMessage(dest, { text: 'Please provide a video name or keyword.' });
+      return zk.sendMessage(dest, { 
+        text: 'Please provide a video name or keyword.',
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     }
 
     console.log('Argument provided:', arg);
@@ -30,7 +74,29 @@ fana({
 
     if (!search || !search.videos || !search.videos[0]) {
       console.log('No video found');
-      return zk.sendMessage(dest, { text: 'No results found for your query.' });
+      return zk.sendMessage(dest, { 
+        text: 'No results found for your query.',
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     }
 
     const video = search.videos[0];
@@ -45,43 +111,147 @@ fana({
       const response = await axios.get(apiURL);
       if (response.status !== 200) {
         console.log('API request failed with status code:', response.status);
-        await zk.sendMessage(dest, { text: 'Failed to retrieve the MP4 download link. Please try again later.' });
+        await zk.sendMessage(dest, { 
+          text: 'Failed to retrieve the MP4 download link. Please try again later.',
+          contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
         return;
       }
       const data = response.data;
       if (!data.downloadLink) {
         console.log('No download link found');
-        return zk.sendMessage(dest, { text: 'Failed to retrieve the MP4 download link.' });
+        return zk.sendMessage(dest, { 
+          text: 'Failed to retrieve the MP4 download link.',
+          contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
       }
 
-      const message = {
+       await zk.sendMessage(dest,{ 
         image: { url: video.thumbnail },
-        caption:
-          `*VIDEO PLAYER*\n\n` +
-          `╭───────────────◆\n` +
-          `│⿻ *Title:* ${video.title}\n` +
-          `│⿻ *Duration:* ${video.timestamp}\n` +
-          `│⿻ *Views:* ${video.views.toLocaleString()}\n` +
-          `│⿻ *Uploaded:* ${video.ago}\n` +
-          `│⿻ *Channel:* ${video.author.name}\n` +
-          `╰────────────────◆\n\n` +
-          `🔗 ${video.url}`,
-      };
-
-      await zk.sendMessage(dest, message);
+        caption: `╭───────────⊷
+┊▢tιtᥣᥱ: *${video.title}*
+┊▢dᥙrᥲtιon: *${video.timestamp}*
+┊▢vιᥱᥕs: *${video.views.toLocaleString()}*
+┊▢ᥙρᥣoᥲdᥱd: *${video.ago}*
+┊▢ᥴhᥲnnᥱᥣ: *${video.author.name}*
+┊___________________________
+┊ ①◦➛ρᥣᥲყ doᥕnᥣoᥲd
+┊ ②◦➛song doᥕnᥣoᥲd
+┊ ③◦➛vιdᥱo doᥕnᥣoᥲd 
+┊ ④◦➛ *doᥕnᥣoᥲd-mᥱnᥙ*
+┊___________________________
+┊ *ɴᴊᴀʙᴜʟᴏᴊʙ* ᴀᴜᴛᴏᴍᴀᴛɪᴄ sᴇɴᴅ *video*
+╰┬──────────⊷⳹
+┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
+┊╰──────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰───────────────⊷`,
+        contextInfo: {
+         externalAdReply: {
+         title: video.title,
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: video.thumbnail,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+        
       console.log('Message sent with image and caption');
 
       await zk.sendMessage(dest, {
         video: { url: data.downloadLink },
         mimetype: 'video/mp4',
         fileName,
-        caption: 'Video downloaded'
-      });
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "NנɐႦυℓσ נႦ✆︎",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
       console.log('Video file sent');
     } catch (err) {
       console.error('[VIDEO] API Error:', err);
       if (err.response && err.response.status === 500) {
-        await zk.sendMessage(dest, { text: 'The API is currently experiencing issues. Please try again later.' });
+        await zk.sendMessage(dest, { 
+          text: 'The API is currently experiencing issues. Please try again later.',
+          contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
       } else {
         await zk.sendMessage(dest, { text: 'An error occurred: ' + err.message });
       }
