@@ -1,12 +1,12 @@
-const { zokou } = require("../framework/zokou");
+const { fana } = require("../njabulo/fana");
 const axios = require('axios');
 
-zokou({
-  nomCom: "lyrics",
+fana({
+  nomCom: "lyricsi",
  3,
   aliases: ["lyric"],
   categorie: "search",
-  reaction: "💫"
+  reaction: "📝"
 }, async (dest, zk, commandOptions) => {
   const { arg, ms, userJid } = commandOptions;
 
