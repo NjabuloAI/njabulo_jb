@@ -86,16 +86,25 @@ fana({
 
       await zk.sendMessage(dest,{ 
         image: { url: video.thumbnail },
-        caption:
-          `*SONG PLAYER*\n\n` +
-          `╭───────────────◆\n` +
-          `│⿻ *Title:* ${video.title}\n` +
-          `│⿻ *Duration:* ${video.timestamp}\n` +
-          `│⿻ *Views:* ${video.views.toLocaleString()}\n` +
-          `│⿻ *Uploaded:* ${video.ago}\n` +
-          `│⿻ *Channel:* ${video.author.name}\n` +
-          `╰────────────────◆\n\n` +
-          `🔗 ${video.url}`,
+        caption: `
+╭───────────⊷
+┊▢tιtᥣᥱ: ${video.title}
+┊▢dᥙrᥲtιon: ${video.timestamp}
+┊▢vιᥱᥕs: ${video.views.toLocaleString()}
+┊▢ᥙρᥣoᥲdᥱd: ${video.ago}
+┊▢ᥴhᥲnnᥱᥣ: ${video.author.name}
+┊___________________________
+┊ ①◦➛ρᥣᥲყ doᥕnᥣoᥲd
+┊ ②◦➛song doᥕnᥣoᥲd
+┊ ③◦➛vιdᥱo doᥕnᥣoᥲd 
+┊ ④◦➛doᥕnᥣoᥲd-mᥱnᥙ 
+┊___________________________
+┊ʀᴇᴘʟʏ ʜɪ ᴡɪᴛʜ *ɴᴀᴍᴇ* ʟɪᴋᴇ *ᴀɪ-ᴍᴇɴᴜ*
+╰┬──────────⊷⳹
+┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ Good ᥲftᥱrnnon!*
+┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰──────────────────⊷
+          🔗 ${video.url}`,
         contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
@@ -109,7 +118,7 @@ fana({
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: video.thumbnail,
-         renderLargerThumbnail: true,
+         renderLargerThumbnail: false,
         },
         },
           }, { quoted: {
@@ -133,11 +142,11 @@ fana({
         fileName,
        contextInfo: {
          externalAdReply: {
-         title: "⏰ message group open & close",
+         title: video.title,
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: video.thumbnail,
-         renderLargerThumbnail: false,
+         renderLargerThumbnail: true,
         },
         },
           }, { quoted: {
