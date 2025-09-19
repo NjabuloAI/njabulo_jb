@@ -2,9 +2,11 @@ const { fana } = require("../njabulo/fana");
 const axios = require('axios');
 const ytSearch = require('yt-search');
 const conf = require(__dirname + '/../set');
+const moment = require("moment-timezone");
+  
 
 fana({
-  nomCom: "son",
+  nomCom: "song",
   aliases: ["song", "playdoc", "audio", "mp3"],
   categorie: "download",
   reaction: "🎸"
@@ -12,12 +14,56 @@ fana({
   const { arg, ms, userJid } = commandOptions;
 
   try {
-    await zk.sendMessage(dest, { text: 'Searching for your song...' });
+    await zk.sendMessage(dest, { 
+      text: 'Searching for your song...',
+      contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     console.log('Searching for song...');
 
     if (!arg) {
       console.log('No argument provided');
-      return zk.sendMessage(dest, { text: 'Please provide a song name or keyword.' });
+      return zk.sendMessage(dest, { 
+        text: 'Please provide a song name or keyword.',
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     }
 
     console.log('Argument provided:', arg);
@@ -30,7 +76,29 @@ fana({
 
     if (!search || !search.videos || !search.videos[0]) {
       console.log('No video found');
-      return zk.sendMessage(dest, { text: 'No results found for your query.' });
+      return zk.sendMessage(dest, { 
+        text: 'No results found for your query.',
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     }
 
     const video = search.videos[0];
@@ -47,32 +115,115 @@ fana({
     const data = response.data;
     if (!data.downloadLink) {
       console.log('No download link found');
-      return zk.sendMessage(dest, { text: 'Failed to retrieve the MP3 download link.' });
+      return zk.sendMessage(dest, { 
+        text: 'Failed to retrieve the MP3 download link.',
+        contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     }
 
-    const message = {
-      image: { url: video.thumbnail },
-      caption:
-        `*SONG PLAYER*\n\n` +
-        `╭───────────────◆\n` +
-        `│⿻ *Title:* ${video.title}\n` +
-        `│⿻ *Duration:* ${video.timestamp}\n` +
-        `│⿻ *Views:* ${video.views.toLocaleString()}\n` +
-        `│⿻ *Uploaded:* ${video.ago}\n` +
-        `│⿻ *Channel:* ${video.author.name}\n` +
-        `╰────────────────◆\n\n` +
-        `🔗 ${video.url}`,
-    };
+    moment.tz.setDefault("Africa/Botswana");
+    const temps = moment().format('HH:mm:ss');
+    const date = moment().format('DD/MM/YYYY');
 
-    await zk.sendMessage(dest, message);
+    // Generate greeting based on time of day
+    const hour = moment().hour();
+    let greeting = "Good Mornιng";
+    if (hour >= 12 && hour < 18) {
+        greeting = "Good ᥲftᥱrnnon!";
+    } else if (hour >= 18) {
+        greeting = "Good Evᥱrnιng!";
+    } else if (hour >= 22 || hour < 5) {
+        greeting = "Good Nιght";
+  }
+
+    await zk.sendMessage(dest,{ 
+        image: { url: video.thumbnail },
+        caption: `╭───────────⊷
+┊▢tιtᥣᥱ: *${video.title}*
+┊▢dᥙrᥲtιon: *${video.timestamp}*
+┊▢vιᥱᥕs: *${video.views.toLocaleString()}*
+┊▢ᥙρᥣoᥲdᥱd: *${video.ago}*
+┊▢ᥴhᥲnnᥱᥣ: *${video.author.name}*
+┊___________________________
+┊ ①◦➛ρᥣᥲყ doᥕnᥣoᥲd
+┊ ②◦➛song doᥕnᥣoᥲd
+┊ ③◦➛vιdᥱo doᥕnᥣoᥲd 
+┊ ④◦➛ *doᥕnᥣoᥲd-mᥱnᥙ*
+┊___________________________
+┊ *ɴᴊᴀʙᴜʟᴏᴊʙ* ᴀᴜᴛᴏᴍᴀᴛɪᴄ sᴇɴᴅ *ᴀᴜᴅɪᴏ*
+╰┬──────────⊷⳹
+┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
+┊╰──────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+╰───────────────⊷`,
+        contextInfo: {
+         externalAdReply: {
+         title: video.title,
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: video.thumbnail,
+         renderLargerThumbnail: false,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
+    
     console.log('Message sent with image and caption');
 
     await zk.sendMessage(dest, {
       document: { url: data.downloadLink },
       mimetype: 'audio/mpeg',
       fileName,
-      caption: 'Song downloaded'
-    });
+      contextInfo: {
+         isForwarded: true,
+         forwardedNewsletterMessageInfo: {
+         newsletterJid: '120363399999197102@newsletter',
+         newsletterName: "╭••➤®Njabulo Jb",
+         serverMessageId: 143,
+        },
+        },
+          }, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "njᥲbᥙᥣo",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=26777821911:+26777821911\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
     console.log('Audio file sent');
 
   } catch (err) {
