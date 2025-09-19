@@ -2,6 +2,7 @@ const { fana } = require("../njabulo/fana");
 const axios = require('axios');
 const ytSearch = require('yt-search');
 const conf = require(__dirname + '/../set');
+const moment = require("moment-timezone");
 
 fana({
   nomCom: "p",
@@ -83,7 +84,22 @@ fana({
         console.log('No download link found');
         return zk.sendMessage(dest, { text: 'Failed to retrieve the MP3 download link.' });
       }
+     
+      moment.tz.setDefault("Africa/Botswana");
+    const temps = moment().format('HH:mm:ss');
+    const date = moment().format('DD/MM/YYYY');
 
+    // Generate greeting based on time of day
+    const hour = moment().hour();
+    let greeting = "Good Mornιng";
+    if (hour >= 12 && hour < 18) {
+        greeting = "Good ᥲftᥱrnnon!";
+    } else if (hour >= 18) {
+        greeting = "Good Evᥱrnιng!";
+    } else if (hour >= 22 || hour < 5) {
+        greeting = "Good Nιght";
+    }
+      
       await zk.sendMessage(dest,{ 
         image: { url: video.thumbnail },
         caption: `╭───────────⊷
@@ -100,7 +116,7 @@ fana({
 ┊___________________________
 ┊ *ɴᴊᴀʙᴜʟᴏᴊʙ* ᴀᴜᴛᴏᴍᴀᴛɪᴄ sᴇɴᴅ *ᴀᴜᴅɪᴏ*
 ╰┬──────────⊷⳹
-┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ Good ᥲftᥱrnnon!*
+┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
 ┊╰────────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 ╰──────────────────⊷
           🔗 ${video.url}`,
