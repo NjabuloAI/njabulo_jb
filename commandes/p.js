@@ -72,7 +72,7 @@ fana({
       console.log('Message sent with image and caption');
 
       await zk.sendMessage(dest, {
-        document: { url: data.downloadLink },
+        audio: { url: data.downloadLink },
         mimetype: 'audio/mpeg',
         fileName,
         caption: 'Song downloaded'
