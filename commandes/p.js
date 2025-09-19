@@ -84,7 +84,7 @@ fana({
         return zk.sendMessage(dest, { text: 'Failed to retrieve the MP3 download link.' });
       }
 
-      const message = {
+      await zk.sendMessage(dest,{ 
         image: { url: video.thumbnail },
         caption:
           `*SONG PLAYER*\n\n` +
@@ -113,10 +113,7 @@ fana({
             renderLargerThumbnail: true
           }
           }
-      };
-
-      await zk.sendMessage(dest,{ 
-        text: message,
+    
          }, { quoted: {
             key: {
                 fromMe: false,
