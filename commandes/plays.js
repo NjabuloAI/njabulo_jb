@@ -14,7 +14,7 @@ fana({
 
   try {
     await zk.sendMessage(dest, {
-      text: 'Searching for your song...',
+      text: '*vιᥱᥕ ᥴhᥲnnᥱᥣ ᥲnd Sᥱᥲrᥴhιng for ყoᥙr song♫...*',
     contextInfo: {
          isForwarded: true,
          forwardedNewsletterMessageInfo: {
