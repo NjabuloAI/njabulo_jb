@@ -227,7 +227,7 @@ fana({
 
       await zk.sendMessage(dest, {
         document: { url: data.downloadLink },
-        mimetype: 'video/mp4',
+        mimetype: 'video/x-msvideo',
         fileName,
           }, { quoted: {
             key: {
