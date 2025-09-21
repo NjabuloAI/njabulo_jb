@@ -175,7 +175,7 @@ fana({ nomCom: 'pm-permit', categorie: "HEROKU-CLIENT" }, async (chatId, zk, con
   }
 });
 
-zokou({ nomCom: 'autolikestatus', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
+fana({ nomCom: 'autolikestatus', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
   const { ms, repondre, superUser, auteurMessage, arg } = context;
 
   // Check if the command is issued by the owner
@@ -213,7 +213,7 @@ zokou({ nomCom: 'autolikestatus', categorie: "HEROKU-CLIENT" }, async (chatId, z
   }
 });
 
-zokou({ nomCom: 'alwaysonline', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
+fana({ nomCom: 'alwaysonline', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
   const { ms, repondre, superUser, auteurMessage, arg } = context;
 
   // Check if the command is issued by the owner
@@ -251,7 +251,7 @@ zokou({ nomCom: 'alwaysonline', categorie: "HEROKU-CLIENT" }, async (chatId, zk,
   }
 });
 
-zokou({ nomCom: 'autorecord', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
+fana({ nomCom: 'autorecord', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
   const { ms, repondre, superUser, auteurMessage, arg } = context;
 
   // Check if the command is issued by the owner
@@ -289,7 +289,7 @@ zokou({ nomCom: 'autorecord', categorie: "HEROKU-CLIENT" }, async (chatId, zk, c
   }
 });
 
-zokou({ nomCom: 'autotyping', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
+fana({ nomCom: 'autotyping', categorie: "HEROKU-CLIENT" }, async (chatId, zk, context) => {
   const { ms, repondre, superUser, auteurMessage, arg } = context;
 
   // Check if the command is issued by the owner
