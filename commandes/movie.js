@@ -6,7 +6,7 @@ const moment = require("moment-timezone");
 
 
 fana({
-  nomCom: "movie",
+  nomCom: "kdrama",
   aliases: ["vid", "mp4", "movie"],
   categorie: "download",
   reaction: "🎥"
