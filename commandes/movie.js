@@ -13,6 +13,10 @@ fana({
 }, async (dest, zk, commandOptions) => {
   const { arg, ms, userJid } = commandOptions;
 
+    if (!superUser) {
+    return repondre("This command is for the owner or Njabulo Jb use");
+    }
+
   try {
     await zk.sendMessage(dest, { 
       text: 'searching for you episode movie',
@@ -49,6 +53,11 @@ fana({
             }
         } });
     }
+
+    if (!arg.join(' ').toLowerCase().includes('episode')) {
+      return repondre("Only kdrama episode work");
+    }
+    
 
     console.log('Argument provided:', arg);
     const query = arg.join(' ');
