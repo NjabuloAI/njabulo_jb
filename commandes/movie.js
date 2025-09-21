@@ -149,7 +149,8 @@ fana({
 📹 ᥙρᥣoᥲdᥱd: *${video.ago}*
 📺 ᥴhᥲnnᥱᥣ: *${video.author.name}*
 
- ${greeting}*`,
+🔗 url ${video.url}
+🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*`,
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -176,7 +177,7 @@ fana({
          mediaType: 1,
           previewType: 0,
          thumbnailUrl: video.thumbnail,
-         renderLargerThumbnail: false,
+         renderLargerThumbnail: true,
         },
         },
           }, { quoted: {
