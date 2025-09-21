@@ -15,15 +15,7 @@ fana({
 
   try {
     await zk.sendMessage(dest, { 
-      text: '*vιᥱᥕ ᥴhᥲnnᥱᥣ ᥲnd Sᥱᥲrᥴhιng for ყoᥙr video♫...*',
-      contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-        },
-        },
+      text: 'searching for you episode movie',
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -43,14 +35,6 @@ fana({
       console.log('No argument provided');
       return zk.sendMessage(dest, { 
         text: 'Please provide a video name or keyword.',
-        contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-        },
-        },
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -78,14 +62,6 @@ fana({
       console.log('No video found');
       return zk.sendMessage(dest, { 
         text: 'No results found for your query.',
-        contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-        },
-        },
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -115,14 +91,6 @@ fana({
         console.log('API request failed with status code:', response.status);
         await zk.sendMessage(dest, { 
           text: 'Failed to retrieve the MP4 download link. Please try again later.',
-          contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-        },
-        },
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -143,14 +111,6 @@ fana({
         console.log('No download link found');
         return zk.sendMessage(dest, { 
           text: 'Failed to retrieve the MP4 download link.',
-          contextInfo: {
-         isForwarded: true,
-         forwardedNewsletterMessageInfo: {
-         newsletterJid: '120363399999197102@newsletter',
-         newsletterName: "╭••➤®Njabulo Jb",
-         serverMessageId: 143,
-        },
-        },
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -183,32 +143,13 @@ fana({
 
        await zk.sendMessage(dest,{ 
         image: { url: video.thumbnail },
-        caption: `╭───────────⊷
-┊▢tιtᥣᥱ: *${video.title}*
-┊▢dᥙrᥲtιon: *${video.timestamp}*
-┊▢vιᥱᥕs: *${video.views.toLocaleString()}*
-┊▢ᥙρᥣoᥲdᥱd: *${video.ago}*
-┊▢ᥴhᥲnnᥱᥣ: *${video.author.name}*
-┊___________________________
-┊ ①◦➛ρᥣᥲყ doᥕnᥣoᥲd
-┊ ②◦➛song doᥕnᥣoᥲd
-┊ ③◦➛vιdᥱo doᥕnᥣoᥲd 
-┊ ④◦➛ *doᥕnᥣoᥲd-mᥱnᥙ*
-┊___________________________
-┊ *ɴᴊᴀʙᴜʟᴏᴊʙ* ᴀᴜᴛᴏᴍᴀᴛɪᴄ sᴇɴᴅ *video*
-╰┬──────────⊷⳹
-┌┤🌇 *hᥲᥣᥣo fᥲmιᥣყ  ${greeting}*
-┊╰──────────────⊷𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
-╰───────────────⊷`,
-        contextInfo: {
-         externalAdReply: {
-         title: video.title,
-         mediaType: 1,
-          previewType: 0,
-         thumbnailUrl: video.thumbnail,
-         renderLargerThumbnail: false,
-        },
-        },
+        caption: `🎥 tιtᥣᥱ: *${video.title}*
+🎞️ dᥙrᥲtιon: *${video.timestamp}*
+📽️ vιᥱᥕs: *${video.views.toLocaleString()}*
+📹 ᥙρᥣoᥲdᥱd: *${video.ago}*
+📺 ᥴhᥲnnᥱᥣ: *${video.author.name}*
+
+ ${greeting}*`,
           }, { quoted: {
             key: {
                 fromMe: false,
@@ -229,6 +170,15 @@ fana({
         document: { url: data.downloadLink },
         mimetype: 'video/x-msvideo',
         fileName,
+        contextInfo: {
+         externalAdReply: {
+         title: video.title,
+         mediaType: 1,
+          previewType: 0,
+         thumbnailUrl: video.thumbnail,
+         renderLargerThumbnail: false,
+        },
+        },
           }, { quoted: {
             key: {
                 fromMe: false,
