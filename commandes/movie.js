@@ -54,11 +54,7 @@ fana({
         } });
     }
 
-    if (!arg.join(' ').toLowerCase().includes('episode')) {
-      return repondre("Only kdrama episode work");
-    }
     
-
     console.log('Argument provided:', arg);
     const query = arg.join(' ');
     console.log('Query:', query);
