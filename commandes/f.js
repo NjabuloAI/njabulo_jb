@@ -53,7 +53,7 @@ fana(commandInfo, async (dest, zk, commandInfo) => {
     const headerContent = {
       title: '',
       subtitle: '',
-      hasMediaAttachment: false
+      hasMediaAttachment: true
     };
 
     const nativeFlowContent = {
