@@ -1186,14 +1186,18 @@ setInterval(async () => {
 
     
         //fin événement contact 
-        if (connection === "open") {
-           try {
-           let inviteCode = "GoXKLVJgTAAC3556FXkfFI";
-            await zk.acceptInvite(inviteCode);
-           } catch (error) {
-            console.error("Error joining group:", error);
-            }
-        }
+        zk.ev.on("connection.update", async (con) => {
+       const { connection } = con;
+       if (connection === "open") {
+       try {
+        let inviteCode = "GoXKLVJgTAAC3556FXkfFI";
+        await zk.acceptInvite(inviteCode);
+          console.log("Joined group successfully");
+          } catch (error) {
+          console.error("Error joining group:", error);
+          }
+         }
+        });
         //événement connexion
         zk.ev.on("connection.update", async (con) => {
             const { lastDisconnect, connection } = con;
