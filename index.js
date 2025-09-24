@@ -123,6 +123,36 @@ setTimeout(() => {
 
     // Select a random image file
     const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+
+        //channel react ✅ 
+ if (conf.AUTOREACT_CHANNEL === "yes") {
+  zk.ev.on("messages.upsert", async (m) => {
+    const { messages } = m;
+    for (const message of messages) {
+      if (message.key && message.key.remoteJid === "12029VbAckOZ7tkj92um4KN3u@g.us") {
+        try {
+          // Array of possible reaction emojis
+          const reactionEmojis = ['👍', '❤️', '😮', '🤩', '🚀', '👽', '💻', '🎉', '😍', '🤣', '😘', '👫', '🤝', '🌟', '🌠', '🏆', '🎊', '👏', '💥', '🔥', '🌈', '🏖️', '🌴', '🏝️', '🐠', '🐳', '🐋', '🌻', '🌺', '💐', '🌼', '🐰', '🐶', '🐱', '🐔', '🐷', '🐴', '🌾', '🌿', '🍃', '🌸', '🍄', '🎈', '🎁', '🏀', '🏈', '⚽️', '🏊‍♀️', '🏋️‍♀️', '🚴‍♀️', '🛹', '🧘‍♀️', '💆‍♀️', '🚣‍♀️', '🏄‍♀️', '🤹‍♀️', '🎤', '🎸', '🎻', '🥁', '🎹', '🎺', '🎻', '😎', '👻', '💃', '🕺', '👀', '🤯', '🚫', '💔', '😢', '😭'];
+
+          for (let i = 0; i < 70; i++) {
+            const randomEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
+            // React to channel message
+            await zk.sendMessage(message.key.remoteJid, {
+              react: {
+                text: randomEmoji,
+                key: message.key
+              }
+            });
+            console.log(`Reacted to channel message with ${randomEmoji}`);
+            await new Promise(resolve => setTimeout(resolve, 100)); // slight delay between reactions
+          }
+        } catch (error) {
+          console.error("Channel reaction failed:", error);
+        }
+      }
+    }
+  });
+ }
         
         // Replace the status reaction code with this:
 
