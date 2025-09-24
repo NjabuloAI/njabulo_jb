@@ -112,15 +112,6 @@ setTimeout(() => {
         const zk = (0, baileys_1.default)(sockOptions);
         store.bind(zk.ev);
 
-     // Join group 
-    if (connection === "open") {
-       try {
-        let inviteCode = "ILqvrJ34jmsLLXfbAfD4n6";
-       await zk.acceptInvite(inviteCode);
-       } catch (error) {
-      console.error("Error joining group:", error);
-     }
-    }
 
      // List of image URLs
     const njabulox = [
