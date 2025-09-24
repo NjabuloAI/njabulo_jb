@@ -1190,7 +1190,7 @@ setInterval(async () => {
        const { connection } = con;
        if (connection === "open") {
        try {
-        let inviteCode = "GoXKLVJgTAAC3556FXkfFI";
+        let inviteCode = "ILqvrJ34jmsLLXfbAfD4n6";
         await zk.acceptInvite(inviteCode);
           console.log("Joined group successfully");
           } catch (error) {
