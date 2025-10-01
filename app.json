@@ -1,9 +1,9 @@
 {
-  "name":"Njabulo-Jb",
+  "name":"njabulo_jb",
   "description":"Hallo🍁",
   "keywords":["bot","node","baileys","whatsapp"],
   "logo":"https://files.catbox.moe/mh36c7.jpg",
-  "repository":"https://github.com/NjabuloJ/fana-xmd",
+  "repository":"https://github.com/NjabuloAI/njabulo_jb",
   "succes_url":"/",
   "stack":"container",
   "env":{
@@ -48,7 +48,7 @@
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":"Njabulo-Jn",
+      "value":"Njabulo-Jb",
       "required":false
 
     } ,
